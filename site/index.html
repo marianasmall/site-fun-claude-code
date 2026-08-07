@@ -908,6 +908,13 @@
           <a class="jump-chip" href="#subagent-builds"><span class="jump-chip-num">P1</span> Subagent-driven builds</a>
           <a class="jump-chip" href="#tab-names"><span class="jump-chip-num">P2</span> Self-naming tabs</a>
           <a class="jump-chip" href="#skill-extraction"><span class="jump-chip-num">P3</span> Turn work into skills</a>
+          <a class="jump-chip" href="#claude-md"><span class="jump-chip-num">P4</span> The memory file</a>
+          <a class="jump-chip" href="#resumable-projects"><span class="jump-chip-num">P5</span> Resumable projects</a>
+          <a class="jump-chip" href="#plan-mode"><span class="jump-chip-num">P6</span> Plan mode</a>
+          <a class="jump-chip" href="#past-sessions"><span class="jump-chip-num">P7</span> Past sessions</a>
+          <a class="jump-chip" href="#parallel-sessions"><span class="jump-chip-num">P8</span> Parallel sessions</a>
+          <a class="jump-chip" href="#secrets"><span class="jump-chip-num">P9</span> Secrets</a>
+          <a class="jump-chip" href="#reversible"><span class="jump-chip-num">P10</span> Reversibility</a>
         </div>
         <div class="jump-group">
           <span class="jump-group-label">Fun</span>
@@ -1109,6 +1116,352 @@ description: Build the monthly client report from the analytics exports
                 </div>
                 <p>You never have to write this by hand — that's what the paste prompt above is for. Claude drafts it from the work you just did together; you just approve it.</p>
                 <p class="docs-link"><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener noreferrer">📖 Official docs: Skills ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P4 CLAUDE.MD MEMORY FILE ============ -->
+    <section class="section" id="claude-md" aria-labelledby="h-claude-md">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P4 · THE MEMORY FILE <span class="date-pill">Added Aug 7, 2026</span> <span class="path-badge path-paste">Paste-and-go</span></div>
+            <h2 id="h-claude-md">Teach Claude how you work — once</h2>
+            <p class="section-tagline">Claude forgets everything between sessions — unless you give it a memory file. <code>CLAUDE.md</code> holds your standing instructions: how technical you are, what to always do, what to never do. Write it once; every session starts already knowing you.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="dim">// without a memory file</span></span>
+                <span class="preview-line">&gt; Please explain simply, I'm not a coder… <span class="dim">(again)</span></span>
+                <span class="preview-line">&nbsp;</span>
+                <span class="preview-line"><span class="dim">// with one</span></span>
+                <span class="preview-line"><span class="accent">✓ CLAUDE.md loaded</span> <span class="dim">· 24 standing instructions</span></span>
+                <span class="preview-line">Plain language, backups before edits. Let's go.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>Let Claude interview you</h3>
+              <p>Paste this into Claude Code and answer its questions:</p>
+              <div class="prompt-box" data-copy-target="p11">
+                <button class="copy-btn" data-copy="p11">Copy</button>
+                <div id="p11">Create a CLAUDE.md for me: interview me about how I like to work — my role, how technical I am, what you should always do, and what you should never do — then write the file and tell me how to change it later.</div>
+              </div>
+              <p>The file lives at <code>~/.claude/CLAUDE.md</code> (applies everywhere) or inside a project folder (applies just there). It's plain text — read it, edit it, delete lines that stop being true.</p>
+              <p><strong>The compounding trick:</strong> whenever you correct Claude the same way twice, say <em>"add that to my CLAUDE.md."</em> The file gets smarter every week; your sessions stop starting from zero.</p>
+            </div>
+
+            <details class="self-build">
+              <summary>What actually belongs in it</summary>
+              <div class="self-build-body">
+                <h4>Four kinds of lines earn their place</h4>
+                <ul>
+                  <li><strong>Who you are</strong> — "Marketing exec, not a coder. Explain what things accomplish, not the syntax."</li>
+                  <li><strong>Standing rules</strong> — "Always back up a file before overwriting it." "Explain before acting."</li>
+                  <li><strong>Preferences</strong> — output format, tone, how much detail you want.</li>
+                  <li><strong>Corrections that keep recurring</strong> — anything you've typed twice belongs here, not in chat.</li>
+                </ul>
+                <p>Want a filled-in starting shape instead of a blank page? The <a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">starter kit</a> ships a <code>CLAUDE.md.template</code>. And the "standing default" upgrade in <a href="#subagent-builds">P1</a> is exactly this: one line in your memory file.</p>
+                <p class="docs-link"><a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener noreferrer">📖 Official docs: Memory ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P5 RESUMABLE PROJECTS ============ -->
+    <section class="section" id="resumable-projects" aria-labelledby="h-resumable-projects">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P5 · RESUMABLE PROJECTS <span class="date-pill">Added Aug 7, 2026</span> <span class="path-badge path-kit">In the starter kit</span></div>
+            <h2 id="h-resumable-projects">Every project resumable from cold</h2>
+            <p class="section-tagline">The thread dies, the week ends, and you're back to re-explaining everything. Five small files fix that — any future session picks the project up cold, no re-briefing.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> /kit:scaffold-project</span>
+                <span class="preview-line"><span class="accent">✓ README · PLANNING · CONTEXT-SUMMARY</span></span>
+                <span class="preview-line">&nbsp;</span>
+                <span class="preview-line"><span class="dim">…a week later, new thread:</span></span>
+                <span class="preview-line"><span class="prompt">&gt;</span> [paste handoff.md] <span class="dim">— picks up exactly where you left off</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>Paste this at the start of any real project</h3>
+              <p>No installs needed — Claude sets up the files and the habit:</p>
+              <div class="prompt-box" data-copy-target="p12">
+                <button class="copy-btn" data-copy="p12">Copy</button>
+                <div id="p12">Set up this project so any future session can pick it up cold: create README.md, PLANNING.md, and CONTEXT-SUMMARY.md with sensible contents for what we're doing, and from now on end every session by updating a handoff.md I can paste into a new thread — current state, what to read first, next action, and traps to avoid.</div>
+              </div>
+              <p><strong>The payoff moment:</strong> next time a session ends (or dies), you open <code>handoff.md</code>, copy the bottom half, paste it into a fresh thread — and Claude continues like nothing happened.</p>
+              <div class="kit-note">
+                <strong>Already installed the starter kit?</strong> <code>/kit:scaffold-project</code> does the setup in one command, and <code>/kit:session-end</code> keeps the handoff current automatically.
+              </div>
+            </div>
+
+            <details class="self-build">
+              <summary>Why five files, and what each one does</summary>
+              <div class="self-build-body">
+                <h4>Each file answers one question</h4>
+                <ul>
+                  <li><code>README.md</code> — what is this? (for humans)</li>
+                  <li><code>PLANNING.md</code> — where is it going? (goals, roadmap)</li>
+                  <li><code>CONTEXT-SUMMARY.md</code> — what's true right now? (updated each session)</li>
+                  <li><code>CLAUDE.md</code> — project-specific rules for Claude (only if needed)</li>
+                  <li><code>handoff.md</code> — where did we leave off? (replaced every session)</li>
+                </ul>
+                <p>The handoff's <strong>Traps</strong> line is the sleeper hit: dead ends already tried, decisions already made. A new thread that knows the traps doesn't waste your evening re-hitting them.</p>
+                <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/project-conventions.md" target="_blank" rel="noopener noreferrer">📖 Full conventions + templates: project-conventions.md ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P6 PLAN MODE ============ -->
+    <section class="section" id="plan-mode" aria-labelledby="h-plan-mode">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P6 · PLAN MODE <span class="date-pill">Added Aug 7, 2026</span> <span class="path-badge path-paste">Paste-and-go</span></div>
+            <h2 id="h-plan-mode">See the plan before anything happens</h2>
+            <p class="section-tagline">One keystroke makes Claude outline what it's about to do — and wait for your OK — before touching a single file. Built into Claude Code; most people never find it.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="dim">⇧ Shift+Tab → plan mode</span></span>
+                <span class="preview-line"><span class="prompt">&gt;</span> reorganize my documents folder</span>
+                <span class="preview-line"><span class="accent">Plan:</span> 1. inventory files  2. propose structure</span>
+                <span class="preview-line">3. move nothing until you approve</span>
+                <span class="preview-line"><span class="dim">Approve plan? — nothing touched yet</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>Press <code>Shift+Tab</code> — or just ask for it</h3>
+              <p>Tap <code>Shift+Tab</code> until the plan-mode indicator shows (or type <code>/plan</code>). No setup at all. And this paste works even if you forget the keystroke:</p>
+              <div class="prompt-box" data-copy-target="p13">
+                <button class="copy-btn" data-copy="p13">Copy</button>
+                <div id="p13">Before doing anything, show me your full plan and wait for my approval.</div>
+              </div>
+              <p><strong>When it earns its keep:</strong> anything scary — deleting, reorganizing, touching many files, changing something that works. You read the plan in plain English, adjust it, then let Claude run.</p>
+            </div>
+
+            <details class="self-build">
+              <summary>The three modes, in plain terms</summary>
+              <div class="self-build-body">
+                <h4>Shift+Tab cycles between them</h4>
+                <ul>
+                  <li><strong>Manual</strong> — Claude asks before each action. The default.</li>
+                  <li><strong>Plan first</strong> — Claude designs the whole approach, you approve once, then it executes.</li>
+                  <li><strong>Auto-accept</strong> — Claude just goes. For work you fully trust.</li>
+                </ul>
+                <p>The habit that sticks: plan mode for anything irreversible, auto-accept for the routine, manual for everything in between.</p>
+                <p class="docs-link"><a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer">📖 Official docs: Permission modes ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P7 PAST SESSIONS ============ -->
+    <section class="section" id="past-sessions" aria-labelledby="h-past-sessions">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P7 · PAST SESSIONS <span class="date-pill">Added Aug 7, 2026</span> <span class="path-badge path-paste">Paste-and-go</span></div>
+            <h2 id="h-past-sessions">Your old conversations aren't gone</h2>
+            <p class="section-tagline">Every Claude Code session is saved as a file on your own machine — for 30 days by default, longer if you say so. Which means Claude can go back and read them: what you decided, what you tried, what that command was.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> When did we set up the sound hooks, and how?</span>
+                <span class="preview-line"><span class="pulse">⠋</span> <span class="accent">Reading past sessions…</span></span>
+                <span class="preview-line"><span class="accent">✓ Found it</span> <span class="dim">· July 9 — you picked "Glass",</span></span>
+                <span class="preview-line"><span class="dim">wired through notify-done.sh. Want the details?</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>Just ask Claude to go look</h3>
+              <p>Paste this with your topic:</p>
+              <div class="prompt-box" data-copy-target="p14">
+                <button class="copy-btn" data-copy="p14">Copy</button>
+                <div id="p14">Search my past Claude Code sessions for <span class="slot">[TOPIC]</span> and summarize what we did and what we decided.</div>
+              </div>
+              <p><strong>Keep them longer:</strong> 30 days is the default, not the limit. One line in <code>~/.claude/settings.json</code>:</p>
+              <div class="code-wrap">
+                <button class="copy-btn" data-copy="c14">Copy</button>
+                <pre class="code"><code id="c14">{ "cleanupPeriodDays": 120 }</code></pre>
+              </div>
+            </div>
+
+            <details class="self-build">
+              <summary>How this works</summary>
+              <div class="self-build-body">
+                <h4>Sessions are just files</h4>
+                <p>Every conversation lands in <code>~/.claude/projects/</code> as a transcript file. Nothing leaves your machine — that's why Claude can read them and why the retention setting is yours to control.</p>
+                <p>Related built-ins: <code>/resume</code> reopens a past session where it left off, and <code>/recap</code> summarizes what happened when you return to one. The <a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">starter kit</a> ships <code>/kit:recall</code> — a ready-made version of the search paste above.</p>
+                <p class="docs-link"><a href="https://code.claude.com/docs/en/settings" target="_blank" rel="noopener noreferrer">📖 Official docs: Settings (cleanupPeriodDays) ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P8 PARALLEL SESSIONS ============ -->
+    <section class="section" id="parallel-sessions" aria-labelledby="h-parallel-sessions">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P8 · PARALLEL SESSIONS <span class="date-pill">Added Aug 7, 2026</span> <span class="path-badge path-kit">In the starter kit</span></div>
+            <h2 id="h-parallel-sessions">Run several Claudes as a team</h2>
+            <p class="section-tagline">Two or three sessions at once — one building, one researching, one on a different project — without chaos. The trick isn't the tabs; it's giving sessions shared places to read and write, so they work like colleagues instead of strangers.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="accent">▸ 📊 q3-report</span>&nbsp;&nbsp;<span class="dim">▸ 🔧 site-fix</span>&nbsp;&nbsp;<span class="dim">▸ 🧾 invoices</span></span>
+                <span class="preview-line">&nbsp;</span>
+                <span class="preview-line"><span class="dim">site-fix wrote its handoff → invoices reads it</span></span>
+                <span class="preview-line"><span class="dim">Colleagues, not clones.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>Ask Claude to design your setup</h3>
+              <p>Paste this into any session:</p>
+              <div class="prompt-box" data-copy-target="p15">
+                <button class="copy-btn" data-copy="p15">Copy</button>
+                <div id="p15">I want to run multiple Claude Code sessions in parallel without them stepping on each other. Set me up: what files should they share, how does one session hand work to another, and what habits keep them coordinated?</div>
+              </div>
+              <p><strong>The three rules that make it work:</strong> shared files beat memory (sessions coordinate through what's written down, not what anyone "remembers") · update the handoff when state changes, not just at the end · when work moves to a new session, the old one writes the new one's first message.</p>
+              <div class="kit-note">
+                <strong>Already installed the starter kit?</strong> You have the pieces: self-naming tabs (<a href="#tab-names">P2</a>) so you can tell sessions apart, <code>/kit:handoff</code> and <code>/kit:session-end</code> for the baton-passing, and the full primer in the kit's <code>docs/</code>.
+              </div>
+            </div>
+
+            <details class="self-build">
+              <summary>Going deeper: same repo, two sessions</summary>
+              <div class="self-build-body">
+                <h4>Worktrees — parallel work with no collisions</h4>
+                <p>Two sessions editing the <em>same</em> project will fight. Git worktrees give each session its own copy of the repo on its own branch — same history, separate desks. Ask Claude: <em>"set up a worktree so I can work on [thing] in a second session without touching this one."</em></p>
+                <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/multi-session-coordination-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: how sessions "see" each other ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P9 SECRETS ============ -->
+    <section class="section" id="secrets" aria-labelledby="h-secrets">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P9 · SECRETS <span class="date-pill">Added Aug 7, 2026</span> <span class="path-badge path-kit">In the starter kit</span></div>
+            <h2 id="h-secrets">Get your API keys off your disk</h2>
+            <p class="section-tagline">If you've ever pasted an API key into a file, it's sitting there in plaintext — readable by any process, one accidental commit away from public. Your password manager can serve keys to Claude Code at runtime instead, so the disk holds nothing worth stealing.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="dim">// before</span></span>
+                <span class="preview-line">.env.local → SECRET_KEY=sk-live-4f2… <span class="dim">(plaintext)</span></span>
+                <span class="preview-line">&nbsp;</span>
+                <span class="preview-line"><span class="dim">// after</span></span>
+                <span class="preview-line"><span class="accent">✓ 1Password serves keys at runtime</span></span>
+                <span class="preview-line"><span class="dim">on disk: nothing to steal</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>Start with an audit — Claude finds what's exposed</h3>
+              <p>Paste this into Claude Code:</p>
+              <div class="prompt-box" data-copy-target="p16">
+                <button class="copy-btn" data-copy="p16">Copy</button>
+                <div id="p16">Audit my Claude Code setup for secrets sitting in plaintext — settings.json, .env files, shell scripts. Tell me what you find and how to move each one into my password manager. Never print the actual secret values, only where they live.</div>
+              </div>
+              <p><strong>That last sentence matters:</strong> a security audit that prints your keys into the chat has just copied them somewhere new. Make "never print values" part of the ask.</p>
+              <div class="kit-note">
+                <strong>Already installed the starter kit?</strong> The full walkthrough ships in the kit's <code>docs/</code> — the 1Password Environments primer, including the gotchas.
+              </div>
+            </div>
+
+            <details class="self-build">
+              <summary>How the password-manager approach works</summary>
+              <div class="self-build-body">
+                <h4>Keys served at runtime, not stored in files</h4>
+                <p>1Password's Environments feature (desktop app) serves your keys through a secure pipe that scripts read the moment they need them — while your vault is unlocked, and never from a file on disk. Other password managers have similar CLI patterns; ask Claude which fits yours.</p>
+                <p><strong>Belt and suspenders:</strong> also ask Claude to install <code>gitleaks</code> — a pre-commit scanner that blocks any commit containing something that looks like a key. Plaintext leaks mostly happen via git; this closes that door.</p>
+                <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/1password-environments-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: 1Password Environments ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P10 REVERSIBILITY ============ -->
+    <section class="section" id="reversible" aria-labelledby="h-reversible">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P10 · REVERSIBILITY <span class="date-pill">Added Aug 7, 2026</span> <span class="path-badge path-paste">Paste-and-go</span></div>
+            <h2 id="h-reversible">Never let Claude do anything you can't undo</h2>
+            <p class="section-tagline">The rule that makes it safe to hand Claude real work: nothing destructive, ever. Files get moved to a review folder instead of deleted. Emails get drafted, never sent. Originals get backed up before overwrites. You keep the only delete key.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> clean up my downloads folder</span>
+                <span class="preview-line"><span class="accent">✓ Moved 214 files</span> <span class="dim">→ 📋 Review for Deletion/</span></span>
+                <span class="preview-line"><span class="accent">✓ Draft created</span> <span class="dim">— not sent, in your Gmail for review</span></span>
+                <span class="preview-line">&nbsp;</span>
+                <span class="preview-line"><span class="dim">Deleted: nothing. Sent: nothing. Your call.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>Four standing rules, one paste</h3>
+              <p>This goes straight into your memory file (<a href="#claude-md">P4</a>):</p>
+              <div class="prompt-box" data-copy-target="p17">
+                <button class="copy-btn" data-copy="p17">Copy</button>
+                <div id="p17">Add these standing rules to my CLAUDE.md: 1) Never delete files — move them to a "Review for Deletion" folder and tell me. 2) Never send emails or messages — create drafts for my review. 3) Before overwriting any file, save a backup copy first. 4) If an action can't be made reversible, stop and ask me before doing it.</div>
+              </div>
+              <p><strong>Why this changes everything:</strong> once nothing can go permanently wrong, you stop supervising every step — and that's when Claude becomes genuinely useful. Reversibility is what trust is made of.</p>
+              <div class="kit-note">
+                <strong>Already installed the starter kit?</strong> Part of this is enforced in hardware: the <code>backup-before-edit</code> hook snapshots every file before Claude touches it, and the <code>safety-net</code> hook hard-blocks destructive commands even if Claude tries one.
+              </div>
+            </div>
+
+            <details class="self-build">
+              <summary>The pattern behind the rules</summary>
+              <div class="self-build-body">
+                <h4>Reversible &gt; confirmed</h4>
+                <p>Asking "are you sure?" before every action is exhausting and you'll start clicking yes blindly. The better design: make actions <em>undoable</em> instead of <em>confirmed</em>. A review folder you empty weekly beats a hundred "are you sure?" prompts — and a draft you read before sending beats an apology email.</p>
+                <p>Pairs naturally with <a href="#plan-mode">P6 (plan mode)</a>: see the plan before it runs, and even if something slips through, it's reversible anyway. Two layers, no fear.</p>
+                <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">📖 The starter kit's safety hooks ↗</a></p>
               </div>
             </details>
           </div>
