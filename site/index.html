@@ -1490,13 +1490,13 @@ description: Build the monthly client report from the analytics exports
           <div class="section-body">
             <div class="shortcut">
               <div class="shortcut-label">Shortcut</div>
-              <h3>A Contacts group becomes the permission</h3>
-              <p>First, in Contacts.app: File &gt; New Group, drag your work people in. (Contacts shows your iCloud and Google contacts together, so one group covers both.) Then paste this into Claude Code:</p>
+              <h3>A contacts list becomes the permission</h3>
+              <p>First, put your work contacts in one place: a list in the Mac's Contacts app (File &gt; New List — <a href="https://support.apple.com/guide/contacts/create-and-change-lists-adrb3280fe91/mac" target="_blank" rel="noopener noreferrer">Apple's how-to</a>; older Macs call it a group), or a <a href="https://support.google.com/contacts/answer/30970" target="_blank" rel="noopener noreferrer">label in your work Google contacts</a> — Contacts shows iCloud and Google side by side, so either works. Then paste this into Claude Code:</p>
               <div class="prompt-box" data-copy-target="p18">
                 <button class="copy-btn" data-copy="p18">Copy</button>
-                <div id="p18">Build a read-only iMessage reader. Derive the allowlist from my [group name] group in Contacts, and build it so it cannot return anything outside that list. Work from a copy of the message database — the live one is locked while Messages is open. No send capability in the code at all. Include a self-test.</div>
+                <div id="p18">Build an iMessage reader. Derive the allowlist from my [list/label name] contacts, and build it so it cannot return anything outside that list. It may draft replies by opening Messages prefilled, but no send capability may exist in the code. Work from a copy of the message database — the live one is locked while Messages is open. Include a self-test.</div>
               </div>
-              <p><strong>Then verify — this step is not optional:</strong> ask for a work thread (it should come back), then ask for a real personal contact (it should come back empty). A test only proves what it was written to prove, so use a real personal contact, not a made-up one.</p>
+              <p><strong>Then verify — this step is not optional:</strong> ask for a work thread (it should come back), then ask for a real personal contact (it should come back empty). Have it draft to a fake number to prove nothing can deliver. A test only proves what it was written to prove, so use a real personal contact, not a made-up one.</p>
               <div class="kit-note">
                 <strong>Already installed the starter kit?</strong> The full walkthrough ships in the kit's <code>docs/</code> — the scoped iMessage access primer, including the traps a real build hit.
               </div>
@@ -1507,7 +1507,9 @@ description: Build the monthly client report from the analytics exports
               <div class="self-build-body">
                 <h4>The Mac can't scope this for you</h4>
                 <p>macOS permission for reading Messages is all or nothing — there's no OS setting for "work texts only." The scoping lives in how the reader is built, which is why <em>"cannot return anything outside that list"</em> is the load-bearing phrase in the prompt, and why the verification step isn't optional.</p>
-                <p><strong>The payoff:</strong> the group <em>is</em> the permission. Add someone in Contacts and Claude can see that conversation; remove them and access is gone. No settings to edit, no list maintained in two places. And because no send capability exists in the code, it can't text anyone — even if asked.</p>
+                <p><strong>The principle: make the scope structural, not a filter.</strong> Personal messages aren't filtered out of the results — they're in data the tool never opens. There's no filter to get wrong.</p>
+                <p><strong>The payoff:</strong> the list <em>is</em> the permission. Add someone in Contacts and Claude can see that conversation; remove them and access is gone. No settings to edit, no list maintained in two places. The one hard rule: it never sends. Drafting is fine — it opens Messages with the reply loaded and you press send — because no send capability exists in the code, it can't text anyone even if asked.</p>
+                <p><strong>Not on a Mac?</strong> The texts part needs one — iMessage's database only exists on Apple devices. But the trick isn't Mac-only: the same work-contacts label can scope Claude's email or calendar reading instead. Same wording, same verification step.</p>
                 <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/scoped-imessage-access-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: scoped iMessage access ↗</a></p>
               </div>
             </details>
