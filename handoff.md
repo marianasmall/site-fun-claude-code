@@ -1,17 +1,17 @@
-# Handoff — 2026-08-12 (wrapping the 2026-08-07 session)
+# Handoff — 2026-08-19 21:55
 
 > This is the copy-paste prompt for a new Claude Code thread. Paste everything below the line.
 
 ---
 
-Continuing the Claude Code tips site (site-fun-claude-code) from the 08-07 build session.
+Continuing the Claude-sites consolidation from the 2026-08-19 night session — executing Build 1.
 
-**Status:** Everything shipped and pushed. Site live at fun-claude-code.netlify.app — 10 dated power tips + 7 fun tips, two chapters. Companion starter kit public, audited, with /kit:verify fire drill. TIPS-REGISTRY.md is the freshness ledger; AGENTS.md carries the mandatory walk-the-registry rule.
+**Status:** Design approved and spec committed. P11 (scoped texts) shipped and registry walked (16/17 current) earlier the same day. Nothing of Build 1 has been built yet.
 
 **Read first:**
-1. `~/Projects/fun-claude-code/AGENTS.md` — the freshness rule (non-negotiable before any site update)
-2. `~/Projects/fun-claude-code/TIPS-REGISTRY.md` — per-tip verify methods + the bench
+1. `docs/superpowers/specs/2026-08-19-claude-sites-consolidation-design.md` — the approved spec (Build 1 = start-here band + starter-kit redirect + claude.marianasmall.ai DNS)
+2. `AGENTS.md` — freshness rule + section conventions (registry was walked 08-19; a re-walk is NOT needed if building within days)
 
-**Last session log:** https://app.notion.com/p/3ba896a1f24381ac8e0fe28f1be6dc95
+**Last session log:** https://app.notion.com/p/3c2896a1f243815cbc9ed3b4b3ca7114
 
-**Next action when you pick up:** Whatever tip is being added, FIRST run the registry freshness pass (primary sources: live machine + code.claude.com docs — agent reports are secondary). Open items if relevant: tip 02 needs a live interactive test; bench holds verify-AI-claims, native-features roundup, and make-your-setup-self-testing.
+**Next action when you pick up:** Build 1 per spec — invoke information-architect for the start-here band structure, keep every existing anchor stable, then the redirect deploy on the old starter-kit site, then check where marianasmall.ai DNS is managed before touching domain setup. Build 2 (stack framework refresh) is a SEPARATE session in ia-before-ai — pointer there names its open beta-gate decision.
