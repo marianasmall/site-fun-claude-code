@@ -15,6 +15,7 @@
 | P8 | Parallel sessions | Shared-surface pattern; git worktrees; kit multi-session primer | Kit primer exists (de-personalized 08-07); worktrees native git | 2026-08-07 | 2026-08-07 | current |
 | P9 | Secrets | Password-manager runtime serving (1Password Environments); gitleaks | Kit 1password primer; gitleaks brew formula | 2026-08-07 | 2026-08-07 | current |
 | P10 | Reversibility | CLAUDE.md standing rules; kit backup-before-edit + safety-net hooks | Kit hooks ship + wired in hooks.json | 2026-08-07 | 2026-08-07 | current |
+| P11 | Scoped texts (Contacts group as allowlist) | macOS Contacts.app groups; chat.db readable w/ Full Disk Access; kit `docs/scoped-imessage-access-primer.md` | Kit primer exists; pattern re-verified against a live build (26/3,425 scope test, 2026-08-19) | 2026-08-19 | 2026-08-19 | current |
 
 **Bench (candidates not yet published):** "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage).
 | 01 | Spinner verbs | `spinnerVerbs` settings key | Live test on current CC (docs table omits it — verify by machine, not docs) | 2026-04 | 2026-08-07 (live: works on 2.1.224) | current |

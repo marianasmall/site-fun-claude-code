@@ -901,7 +901,7 @@
         and customizations that make the terminal yours. Every tip is dated, so you always know what's current.
         You don't have to write any code — Claude writes it for you.
       </p>
-      <p class="hero-updated">Last updated <strong>August 7, 2026</strong></p>
+      <p class="hero-updated">Last updated <strong>August 19, 2026</strong></p>
       <nav class="jump-nav" aria-label="Jump to a tip">
         <div class="jump-group">
           <span class="jump-group-label">Powerful</span>
@@ -1462,6 +1462,53 @@ description: Build the monthly client report from the analytics exports
                 <p>Asking "are you sure?" before every action is exhausting and you'll start clicking yes blindly. The better design: make actions <em>undoable</em> instead of <em>confirmed</em>. A review folder you empty weekly beats a hundred "are you sure?" prompts — and a draft you read before sending beats an apology email.</p>
                 <p>Pairs naturally with <a href="#plan-mode">P6 (plan mode)</a>: see the plan before it runs, and even if something slips through, it's reversible anyway. Two layers, no fear.</p>
                 <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">📖 The starter kit's safety hooks ↗</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ P11 SCOPED TEXTS ============ -->
+    <section class="section" id="scoped-texts" aria-labelledby="h-scoped-texts">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-head">
+            <div class="section-num">P11 · SCOPED TEXTS <span class="date-pill">Added Aug 19, 2026</span> <span class="path-badge path-kit">In the starter kit</span></div>
+            <h2 id="h-scoped-texts">Give Claude your work texts (and nothing else)</h2>
+            <p class="section-tagline">"Let AI read my texts" has always meant all of them — family, doctors, everything. That's the wrong trade, so nobody makes it. The fix: a group in your Mac's Contacts app becomes the permission. Whoever is in the group is visible to Claude; everyone else doesn't exist.</p>
+            <div class="preview" aria-hidden="true">
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> find the text where the delivery date was confirmed</span>
+                <span class="preview-line"><span class="accent">✓ Searching 26 work threads</span> <span class="dim">(of 3,425 on this Mac)</span></span>
+                <span class="preview-line">&nbsp;</span>
+                <span class="preview-line"><span class="dim">personal messages: in data the tool never opens</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="shortcut">
+              <div class="shortcut-label">Shortcut</div>
+              <h3>A Contacts group becomes the permission</h3>
+              <p>First, in Contacts.app: File &gt; New Group, drag your work people in. (Contacts shows your iCloud and Google contacts together, so one group covers both.) Then paste this into Claude Code:</p>
+              <div class="prompt-box" data-copy-target="p18">
+                <button class="copy-btn" data-copy="p18">Copy</button>
+                <div id="p18">Build a read-only iMessage reader. Derive the allowlist from my [group name] group in Contacts, and build it so it cannot return anything outside that list. Work from a copy of the message database — the live one is locked while Messages is open. No send capability in the code at all. Include a self-test.</div>
+              </div>
+              <p><strong>Then verify — this step is not optional:</strong> ask for a work thread (it should come back), then ask for a real personal contact (it should come back empty). A test only proves what it was written to prove, so use a real personal contact, not a made-up one.</p>
+              <div class="kit-note">
+                <strong>Already installed the starter kit?</strong> The full walkthrough ships in the kit's <code>docs/</code> — the scoped iMessage access primer, including the traps a real build hit.
+              </div>
+            </div>
+
+            <details class="self-build">
+              <summary>Why the wording matters</summary>
+              <div class="self-build-body">
+                <h4>The Mac can't scope this for you</h4>
+                <p>macOS permission for reading Messages is all or nothing — there's no OS setting for "work texts only." The scoping lives in how the reader is built, which is why <em>"cannot return anything outside that list"</em> is the load-bearing phrase in the prompt, and why the verification step isn't optional.</p>
+                <p><strong>The payoff:</strong> the group <em>is</em> the permission. Add someone in Contacts and Claude can see that conversation; remove them and access is gone. No settings to edit, no list maintained in two places. And because no send capability exists in the code, it can't text anyone — even if asked.</p>
+                <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/scoped-imessage-access-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: scoped iMessage access ↗</a></p>
               </div>
             </details>
           </div>
