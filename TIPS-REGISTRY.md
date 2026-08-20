@@ -5,26 +5,26 @@
 
 | ID | Tip | Depends on | How to verify | Added | Last verified/updated | Status |
 |----|-----|-----------|---------------|-------|----------------------|--------|
-| P1 | Subagent-driven builds | superpowers plugin (writing-plans, subagent-driven-development skills) | Plugin still installable; skills still named this | 2026-08-07 | 2026-08-07 | current |
-| P2 | Self-naming tabs | `statusLine` settings block; `examples/statusline.sh` in starter kit repo (public); `jq` | Docs /en/statusline; kit repo reachable + file exists; `/plugin update kit` works | 2026-08-07 | 2026-08-07 | current |
-| P3 | Turn work into skills | Skills system (`~/.claude/skills/[name]/SKILL.md`) | Docs /en/skills | 2026-08-07 | 2026-08-07 | current |
-| P4 | The memory file | CLAUDE.md loading | Docs /en/memory | 2026-08-07 | 2026-08-07 | current |
-| P5 | Resumable projects | Kit `/kit:scaffold-project`, project-conventions.md | Kit repo files exist; command ships | 2026-08-07 | 2026-08-07 | current |
-| P6 | Plan mode | Shift+Tab mode cycle; `/plan` | Docs /en/permission-modes | 2026-08-07 | 2026-08-07 | current |
-| P7 | Past sessions | Transcripts in `~/.claude/projects/`; `cleanupPeriodDays` (default 30) | Docs /en/settings; live machine (set to 120, 175 transcripts present) | 2026-08-07 | 2026-08-07 | current |
-| P8 | Parallel sessions | Shared-surface pattern; git worktrees; kit multi-session primer | Kit primer exists (de-personalized 08-07); worktrees native git | 2026-08-07 | 2026-08-07 | current |
-| P9 | Secrets | Password-manager runtime serving (1Password Environments); gitleaks | Kit 1password primer; gitleaks brew formula | 2026-08-07 | 2026-08-07 | current |
-| P10 | Reversibility | CLAUDE.md standing rules; kit backup-before-edit + safety-net hooks | Kit hooks ship + wired in hooks.json | 2026-08-07 | 2026-08-07 | current |
+| P1 | Subagent-driven builds | superpowers plugin (writing-plans, subagent-driven-development skills) | Plugin still installable; skills still named this | 2026-08-07 | 2026-08-19 | current |
+| P2 | Self-naming tabs | `statusLine` settings block; `examples/statusline.sh` in starter kit repo (public); `jq` | Docs /en/statusline; kit repo reachable + file exists; `/plugin update kit` works | 2026-08-07 | 2026-08-19 | current |
+| P3 | Turn work into skills | Skills system (`~/.claude/skills/[name]/SKILL.md`) | Docs /en/skills | 2026-08-07 | 2026-08-19 | current |
+| P4 | The memory file | CLAUDE.md loading | Docs /en/memory | 2026-08-07 | 2026-08-19 | current |
+| P5 | Resumable projects | Kit `/kit:scaffold-project`, project-conventions.md | Kit repo files exist; command ships | 2026-08-07 | 2026-08-19 | current |
+| P6 | Plan mode | Shift+Tab mode cycle; `/plan` | Docs /en/permission-modes | 2026-08-07 | 2026-08-19 | current |
+| P7 | Past sessions | Transcripts in `~/.claude/projects/`; `cleanupPeriodDays` (default 30) | Docs /en/settings; live machine (set to 120, 171 transcripts present 08-19) | 2026-08-07 | 2026-08-19 | current |
+| P8 | Parallel sessions | Shared-surface pattern; git worktrees; kit multi-session primer | Kit primer exists (de-personalized 08-07); worktrees native git | 2026-08-07 | 2026-08-19 | current |
+| P9 | Secrets | Password-manager runtime serving (1Password Environments); gitleaks | Kit 1password primer; gitleaks brew formula | 2026-08-07 | 2026-08-19 | current |
+| P10 | Reversibility | CLAUDE.md standing rules; kit backup-before-edit + safety-net hooks | Kit hooks ship + wired in hooks.json | 2026-08-07 | 2026-08-19 | current |
 | P11 | Scoped texts (Contacts group as allowlist) | macOS Contacts.app groups; chat.db readable w/ Full Disk Access; kit `docs/scoped-imessage-access-primer.md` | Kit primer exists; pattern re-verified against a live build (26/3,425 scope test, 2026-08-19) | 2026-08-19 | 2026-08-19 | current |
 
 **Bench (candidates not yet published):** "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage).
-| 01 | Spinner verbs | `spinnerVerbs` settings key | Live test on current CC (docs table omits it — verify by machine, not docs) | 2026-04 | 2026-08-07 (live: works on 2.1.224) | current |
+| 01 | Spinner verbs | `spinnerVerbs` settings key | Live test on current CC (docs table omits it — verify by machine, not docs) | 2026-04 | 2026-08-19 (registry walk; see FRESHNESS-2026-08-19.md) | current |
 | 02 | Spinner tips | `spinnerTipsOverride` settings key | UNDOCUMENTED in current docs (only `spinnerTipsEnabled` appears). Needs live interactive test | 2026-04 | — | **unverified — test next session** |
-| 03 | Status line / mascot | `statusLine` block, script on stdin | Docs /en/statusline | 2026-04 | 2026-08-07 | current |
-| 04 | Output styles | `/config` → Output style; `outputStyle` setting; frontmatter | Docs /en/output-styles (`/output-style` cmd REMOVED v2.1.91) | 2026-04 | 2026-08-07 (updated) | current |
-| 05 | Sounds | Stop/Notification hooks | Docs /en/hooks | 2026-04 | 2026-08-07 | current |
-| 06 | Themes | `/config theme=...` (v2.1.182+); `theme` setting | Docs /en/commands (`/theme` cmd GONE) | 2026-04 | 2026-08-07 (updated) | current |
-| 07 | Slash commands | `.claude/commands/*.md` (merged into skills; still work) | Docs /en/skills merge note | 2026-04 | 2026-08-07 (updated) | current |
+| 03 | Status line / mascot | `statusLine` block, script on stdin | Docs /en/statusline | 2026-04 | 2026-08-19 | current |
+| 04 | Output styles | `/config` → Output style; `outputStyle` setting; frontmatter | Docs /en/output-styles (`/output-style` cmd REMOVED v2.1.91) | 2026-04 | 2026-08-19 | current |
+| 05 | Sounds | Stop/Notification hooks | Docs /en/hooks | 2026-04 | 2026-08-19 | current |
+| 06 | Themes | `/config theme=...` (v2.1.182+); `theme` setting | Docs /en/commands (`/theme` cmd GONE) | 2026-04 | 2026-08-19 | current |
+| 07 | Slash commands | `.claude/commands/*.md` (merged into skills; still work) | Docs /en/skills merge note | 2026-04 | 2026-08-19 | current |
 
 **Verification method (non-negotiable, learned 2026-08-07):** an AI freshness report is a
 SECONDARY source. Before editing the site from one, reconcile every claimed deprecation against
