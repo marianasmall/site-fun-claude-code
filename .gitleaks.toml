@@ -1,0 +1,22 @@
+# Gitleaks config for fun-claude-code
+#
+# Suppresses working-tree (--no-git) scan noise from .gitignore'd local files.
+# gitleaks does not natively honor .gitignore; this allowlist mirrors it so
+# `gitleaks detect --no-git` returns clean signal. Git-history scans still
+# catch any real accidentally-committed secret.
+
+title = "fun-claude-code — suppress gitignored-path noise"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Local-only paths from .gitignore — never committed to repo"
+# Patterns match both absolute (--no-git) and relative (git-history) paths. No leading anchor.
+paths = [
+    '''_private/''',
+    '''_backups/''',
+    '''\.netlify/''',
+    '''\.backup$''',
+    '''\.bak$''',
+]
