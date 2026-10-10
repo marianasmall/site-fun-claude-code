@@ -574,7 +574,7 @@
             <div class="eyebrow">P2 · Self-naming tabs <span class="done-chip">Tried</span></div>
             <h3 class="title">Terminal tabs that name themselves</h3>
             <p class="hook">Running more than one Claude conversation at once, each in its own terminal tab? Each tab names itself after what that conversation is about, so you never type into the wrong one. Total sanity-saver.</p>
-            <div class="meta"><span class="date-pill">Added Aug 7, 2026</span><span class="path-badge path-kit">In the starter kit</span></div>
+            <div class="meta"><span class="date-pill">Updated Oct 10, 2026</span><span class="path-badge path-kit">In the starter kit</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
         </div>
@@ -606,7 +606,7 @@
           </section>
           <section class="panel" data-panel="short">
             <div class="kit-note">
-              <strong>Already installed the starter kit?</strong> You have this — just run <code>/plugin update kit</code>, then run <code>/kit:verify</code>, and the name tags come along.
+              <strong>Already installed the starter kit?</strong> The script comes with it, but the kit doesn't switch it on for you. Run the paste above once and the name tags appear. Copied it before? Run the paste again to get the latest version.
             </div>
             <h3>Or grab the whole starter kit</h3>
             <h4>Two commands, full setup</h4>
@@ -616,7 +616,7 @@
               <pre class="code"><code id="c9">/plugin marketplace add https://github.com/marianasmall/claude-code-starter-kit
 /plugin install kit@claude-code-starter-kit</code></pre>
             </div>
-            <p>Installing as a plugin means updates flow to you: when new goodies land in the kit, run <code>/plugin update kit</code>, then run <code>/kit:verify</code>, and you're current. Not sure which plugins and connectors are worth adding? The kit's <a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/choosing-plugins-and-connectors-primer.md" target="_blank" rel="noopener noreferrer">plugins and connectors primer</a> walks through it.</p>
+            <p>Installing as a plugin means updates are one command away: when new goodies land in the kit, run <code>claude plugin update kit@claude-code-starter-kit</code> in your terminal (not inside Claude Code), restart Claude Code, then run <code>/kit:verify</code>, and you're current. Not sure which plugins and connectors are worth adding? The kit's <a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/choosing-plugins-and-connectors-primer.md" target="_blank" rel="noopener noreferrer">plugins and connectors primer</a> walks through it.</p>
           </section>
           <section class="panel" data-panel="further">
             <p><strong>Related:</strong> <a href="#status-line">Fun 03 — the mascot status line</a> lives in the same bar. The kit's statusline and the mascot are cousins; you can merge them.</p>
@@ -933,7 +933,7 @@ description: Build the monthly client report from the analytics exports
             <div class="eyebrow">P6 · Plan mode <span class="done-chip">Tried</span></div>
             <h3 class="title">See the plan before anything happens</h3>
             <p class="hook">One keystroke makes Claude outline what it's about to do — and wait for your OK — before touching a single file. Built into Claude Code; most people never find it.</p>
-            <div class="meta"><span class="date-pill">Added Aug 7, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+            <div class="meta"><span class="date-pill">Updated Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 10 sec</span></div>
         </div>
@@ -967,10 +967,10 @@ description: Build the monthly client report from the analytics exports
             <h3>The modes, in plain terms</h3>
             <h4>Shift+Tab cycles between them</h4>
             <ul>
-              <li><strong>Auto</strong> — Claude runs routine actions itself and checks with you before risky ones. The default since Claude Code 2.1.285.</li>
+              <li><strong>Auto</strong> — Claude runs routine actions itself and checks with you before risky ones. The default for everyone since Claude Code 2.1.284.</li>
               <li><strong>Manual</strong> — Claude asks before each action. For when you want to watch every step.</li>
               <li><strong>Plan first</strong> — Claude designs the whole approach, you approve once, then it executes.</li>
-              <li><strong>Auto-accept</strong> — Claude just goes. For work you fully trust.</li>
+              <li><strong>Accept edits</strong> — Claude edits files and runs basic file commands without asking, and still checks with you before other commands. For changes you'll review afterward.</li>
             </ul>
             <p>The status line under the prompt shows which mode you're in. To pick your own default, set <code>permissions.defaultMode</code> in <code>~/.claude/settings.json</code>. Using the <a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">starter kit</a>? Its safety hooks run underneath every mode, auto included.</p>
             <p>The habit that sticks: plan mode for anything irreversible, auto for the everyday, manual when you want to see each step.</p>
@@ -1044,7 +1044,7 @@ description: Build the monthly client report from the analytics exports
             <div class="eyebrow">P10 · Reversibility <span class="done-chip">Tried</span></div>
             <h3 class="title">Never let Claude do anything you can't undo</h3>
             <p class="hook">The rule that makes it safe to hand Claude real work: nothing destructive, ever. Files get moved to a review folder instead of deleted. Emails get drafted, never sent. Originals get backed up before overwrites. You keep the only delete key.</p>
-            <div class="meta"><span class="date-pill">Added Aug 7, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+            <div class="meta"><span class="date-pill">Updated Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 2 min</span></div>
         </div>
@@ -1082,7 +1082,7 @@ description: Build the monthly client report from the analytics exports
           </section>
           <section class="panel" data-panel="short">
             <div class="kit-note">
-              <strong>Already installed the starter kit?</strong> Part of this is enforced in hardware: the <code>backup-before-edit</code> hook snapshots every file before Claude touches it, and the <code>safety-net</code> hook hard-blocks destructive commands even if Claude tries one. Installed before Oct 9, 2026? Run <code>/plugin update kit</code>, then <code>/kit:verify</code> — version 0.2.1 fixed a bug where these hooks didn't load.
+              <strong>Already installed the starter kit?</strong> Part of this is enforced in hardware: the <code>backup-before-edit</code> hook snapshots every file before Claude touches it, and the <code>safety-net</code> hook hard-blocks destructive commands even if Claude tries one. Installed before Oct 9, 2026? Version 0.2.1 fixed a bug where these hooks didn't load. Run <code>claude plugin update kit@claude-code-starter-kit</code> in your terminal (not inside Claude Code), restart Claude Code, then run <code>/kit:verify</code>.
             </div>
             <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">📖 The starter kit's safety hooks ↗</a></p>
           </section>
@@ -1307,7 +1307,7 @@ description: Build the monthly client report from the analytics exports
             <div class="eyebrow">03 · Status line · mascot <span class="done-chip">Tried</span></div>
             <h3 class="title">The bar at the bottom</h3>
             <p class="hook">The strip along the bottom of Claude Code is always visible. Put an emoji mascot there, your name, the time, or a live dashboard showing which model you're using and your git branch (if you use git).</p>
-            <div class="meta"><span class="date-pill">Apr 2026 · verified Aug 2026</span></div>
+            <div class="meta"><span class="date-pill">Updated Oct 10, 2026</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 10 min</span></div>
         </div>
@@ -1355,8 +1355,8 @@ description: Build the monthly client report from the analytics exports
               <button class="copy-btn" data-copy="c3a">Copy</button>
               <pre class="code"><code id="c3a">{
   "statusLine": {
-    "type": "text",
-    "text": "🤖 Claude Code — let's build"
+    "type": "command",
+    "command": "echo \"🤖 Claude Code, let's build\""
   }
 }</code></pre>
             </div>
@@ -1385,8 +1385,8 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">04 · Output styles <span class="done-chip">Tried</span></div>
             <h3 class="title">Change Claude's tone</h3>
-            <p class="hook">Output styles shape <em>how</em> Claude communicates — the voice, the structure, the depth. Teacher tone. Mentor tone. Pirate tone. Four built-in styles plus unlimited custom ones.</p>
-            <div class="meta"><span class="date-pill">Updated Aug 7, 2026</span></div>
+            <p class="hook">Output styles shape <em>how</em> Claude communicates — the voice, the structure, the depth. Teacher tone. Mentor tone. Pirate tone. Five built-in styles plus unlimited custom ones.</p>
+            <div class="meta"><span class="date-pill">Updated Oct 10, 2026</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
         </div>
@@ -1412,7 +1412,7 @@ description: Build the monthly client report from the analytics exports
               <li>A kindergarten teacher explaining to a 5-year-old</li>
               <li>A strategist focused on jobs-to-be-done</li>
             </ul>
-            <p class="muted-note">Save the file. Activate it by typing <code>/config</code> and picking it under <strong>Output style</strong>. Run <code>/clear</code> or start a new session for it to kick in. <em>(If you learned the old <code>/output-style</code> command — it was removed in mid-2026; everything lives in <code>/config</code> now.)</em></p>
+            <p class="muted-note">Save the file, then quit and reopen Claude Code so it sees the new file. Activate it by typing <code>/output-style</code> and picking it from the list, or type <code>/config</code> and pick it under <strong>Output style</strong>. It kicks in from your next message.</p>
             <div class="preview" aria-hidden="true">
               <span class="preview-cap">Same task, three styles</span>
               <div class="preview-body">
@@ -1432,11 +1432,12 @@ description: Build the monthly client report from the analytics exports
           </section>
           <section class="panel" data-panel="further">
             <h3>Or write it yourself</h3>
-            <h4>Four built-in styles</h4>
-            <p>Switch between them inside Claude Code: type <code>/config</code>, pick <strong>Output style</strong>:</p>
+            <h4>Five built-in styles</h4>
+            <p>Switch between them inside Claude Code: type <code>/output-style</code>, or type <code>/config</code> and pick <strong>Output style</strong>:</p>
             <ul>
               <li><strong>Default</strong> — standard Claude Code</li>
               <li><strong>Proactive</strong> — Claude acts first and asks less; good when you trust it with routine calls</li>
+              <li><strong>Concise</strong> — shorter answers that lead with the result and skip the recap</li>
               <li><strong>Explanatory</strong> — adds teaching insights to every response</li>
               <li><strong>Learning</strong> — Claude leaves pieces of code for you to complete</li>
             </ul>
@@ -1545,7 +1546,7 @@ Never write more than one file without pausing to check in.</code></pre>
             <div class="eyebrow">06 · Themes <span class="done-chip">Tried</span></div>
             <h3 class="title">Change the colors</h3>
             <p class="hook">The fastest customization on this list — takes five seconds, no restart. Light, dark, auto-switch, or colorblind-friendly.</p>
-            <div class="meta"><span class="date-pill">Updated Aug 7, 2026</span></div>
+            <div class="meta"><span class="date-pill">Updated Oct 10, 2026</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 sec</span></div>
         </div>
@@ -1571,7 +1572,7 @@ Never write more than one file without pausing to check in.</code></pre>
               <button class="copy-btn" data-copy="p6">Copy</button>
               <div id="p6"><code>/config theme=dark</code></div>
             </div>
-            <p>Swap <code>dark</code> for any theme in the table under Go further — or just type <code>/config</code> alone and pick from the menu. Changes instantly. No restart. <em>(The old <code>/theme</code> command retired into <code>/config</code> in mid-2026.)</em></p>
+            <p>Swap <code>dark</code> for any theme in the table under Go further — or just type <code>/config</code> alone and pick from the menu. Changes instantly. No restart. <em>(Typing <code>/theme</code> works too, and that's where you can design your own custom theme.)</em></p>
             <p class="muted-note"><strong>Pro tip:</strong> use <code>auto</code> if you switch between dark at night and light by day. Use <code>light</code> if you take screenshots — dark themes photograph poorly.</p>
             <div class="card-foot"><p>New colors? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
@@ -1584,7 +1585,7 @@ Never write more than one file without pausing to check in.</code></pre>
                   <tr><th>Theme</th><th>When to use</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td><code>auto</code></td><td>Follows your macOS system setting</td></tr>
+                  <tr><td><code>auto</code></td><td>Matches your terminal's light or dark background</td></tr>
                   <tr><td><code>dark</code></td><td>Classic dark mode</td></tr>
                   <tr><td><code>light</code></td><td>High-contrast, good for screenshots</td></tr>
                   <tr><td><code>dark-daltonized</code></td><td>Dark + colorblind-friendly</td></tr>
@@ -1612,7 +1613,7 @@ Never write more than one file without pausing to check in.</code></pre>
             <div class="eyebrow">07 · Slash commands <span class="done-chip">Tried</span></div>
             <h3 class="title">Your own shortcuts</h3>
             <p class="hook">Turn any prompt you type often into one word. <code>/standup</code>, <code>/pep</code>, <code>/decide</code>, <code>/joke</code> — whatever you'd send yourself at 9am.</p>
-            <div class="meta"><span class="date-pill">Updated Aug 7, 2026</span></div>
+            <div class="meta"><span class="date-pill">Updated Oct 10, 2026</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
         </div>
@@ -1631,7 +1632,7 @@ Never write more than one file without pausing to check in.</code></pre>
             </div>
             <p><strong>Commands worth building:</strong></p>
             <ul class="ex-list">
-              <li><code>/recap</code> — summarize my last 3 Slack messages into one action</li>
+              <li><code>/slack-recap</code> — summarize my last 3 Slack messages into one action</li>
               <li><code>/decide</code> — pick between two options with a pros/cons frame</li>
               <li><code>/elevator</code> — turn a long idea into a 30-second pitch</li>
               <li><code>/reframe</code> — offer 3 alternatives to a negative thought</li>
