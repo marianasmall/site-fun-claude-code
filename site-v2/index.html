@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mariana's Claude Code Tips — make it fun, make it powerful</title>
-  <meta name="description" content="A living, dated collection of Claude Code tips from daily use: power moves like subagent-driven builds and self-naming tabs, plus fun customizations — spinner verbs, mascots, sounds, themes. Copy-paste ready.">
+  <meta name="description" content="Dated Claude Code tips for people who don't code: copy a sentence, paste it, and Claude does the setup. Power moves like plan mode and memory files, plus fun customizations like spinner verbs, mascots, sounds, and themes.">
 
   <meta property="og:title" content="Mariana's Claude Code Tips">
   <meta property="og:description" content="Make it fun. Make it powerful. Dated, copy-paste-ready Claude Code tips from daily use.">
@@ -170,6 +170,42 @@
     .about h3 { font-size: 0.9375rem; color: var(--ink); margin: 0 0 4px; }
     .about h3::before { content: ""; display: block; width: 28px; height: 3px; background: var(--accent); margin-bottom: 8px; border-radius: 2px; }
     .about p { font-size: 0.875rem; color: var(--muted); margin: 0; }
+    .about a { color: var(--accent-dark); }
+    @media (min-width: 900px) { .quick { grid-template-columns: repeat(3, 1fr); } }
+    .start > p a { color: var(--accent-dark); }
+
+    /* New-to-Claude-Code box */
+    .newhere { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; margin: 0 0 2rem; box-shadow: var(--shadow-subtle); }
+    .start .newhere-title { font-family: var(--font-body); font-weight: 700; font-size: 1.125rem; margin: 0 0 6px; }
+    .newhere p { margin: 0 0 10px; max-width: 720px; }
+    .newhere .newhere-cta { margin: 14px 0 0; }
+
+    /* Let Claude set it up */
+    .setup { background: var(--color-navy-wash); border-radius: var(--radius); padding: 22px 20px; margin: 0 0 2.5rem; scroll-margin-top: 80px; }
+    .setup .setup-lede { margin: 0 0 16px; max-width: 680px; }
+    .setup-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 820px) { .setup-grid { grid-template-columns: 1fr 1fr; } }
+    .setup-opt { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; min-width: 0; }
+    .setup-opt small { display: block; color: var(--accent-dark); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .setup-opt h3 { font-size: 1.0625rem; color: var(--ink); margin: 4px 0 6px; }
+    .setup-opt p { margin: 0 0 12px; font-size: 0.9375rem; }
+    .setup-opt .setup-small { font-size: 0.875rem; color: var(--muted); margin: 10px 0 0; }
+    .setup-opt a { color: var(--accent-dark); }
+    .safety-line { margin: 16px 0 0; font-size: 0.9375rem; }
+    .setup-opt pre.code { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+    /* Glossary */
+    .glossary { margin: 1.25rem 0 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .glossary summary { cursor: pointer; padding: 12px 16px; min-height: 44px; font-weight: 600; color: var(--ink); }
+    .glossary dl { margin: 0; padding: 0 16px 14px; display: grid; grid-template-columns: 1fr; gap: 2px 18px; }
+    @media (min-width: 720px) { .glossary dl { grid-template-columns: 9rem 1fr; } }
+    .glossary dt { font-weight: 600; color: var(--ink); margin-top: 8px; }
+    .glossary dd { margin: 0; font-size: 0.9375rem; }
+    @media (min-width: 720px) { .glossary dd { margin-top: 8px; } }
+
+    /* "Easier way" pointer on hand-edit cards */
+    .easy-note { background: var(--tip-bg); border-left: 3px solid var(--tip-border); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 14px 0; font-size: 0.9375rem; }
+    .easy-note a { color: var(--color-sage-dark); }
 
     /* ============== BUCKETS + CARDS ============== */
     .bucket { padding-top: 1.5rem; scroll-margin-top: 80px; }
@@ -356,14 +392,14 @@
 
   <header class="hero">
     <div class="wrap">
-      <div class="hero-eyebrow">A share from a Claude Code power user</div>
+      <div class="hero-eyebrow">From a marketer who uses Claude Code every day</div>
       <h1 class="hero-title">Mariana's <em>Claude Code</em> Tips</h1>
       <p class="hero-lede">
-        Make it fun. Make it powerful. Tips collected from daily use — power moves that change how you build,
-        and customizations that make the terminal yours. Every tip is dated, so you always know what's current.
-        You don't have to write any code — Claude writes it for you.
+        Make it fun. Make it powerful. These are 18 small things that make Claude Code easier, safer, and more yours.
+        Each one takes between five seconds and half an hour. You don't need to write code: you copy a sentence,
+        paste it into Claude, and Claude does the setup.
       </p>
-      <p class="hero-updated">Last updated <strong>August 19, 2026</strong></p>
+      <p class="hero-updated">Last updated <strong>October 10, 2026</strong></p>
     </div>
   </header>
 
@@ -381,11 +417,48 @@
 
     <!-- ============ START SCREEN ============ -->
     <section class="start" id="start" aria-labelledby="h-start">
-      <h2 id="h-start">Pick one and try it</h2>
-      <p>Start with themes — it's five seconds and you'll see the change instantly. Then, on your next real build, try the subagent two-step. That's the one that changes how you work.</p>
+
+      <div class="newhere" id="new-here">
+        <h2 class="newhere-title">New to Claude Code?</h2>
+        <p>Claude Code is Claude that works directly on your computer. You talk to it in plain English, the way you do on Claude.ai, but it can also open files, change settings, and set things up for you. Most people use it in a terminal: the plain text window where you type commands. That's why most tips here come down to copying one sentence and pasting it in.</p>
+        <p><b>Two places you'll paste.</b> <b>Claude Code</b> when you want the change made for you. <b>Claude.ai</b> (the chat website) when a tip has you draft something first. Every card says which one.</p>
+        <p class="newhere-cta"><a class="btn-ghost" href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener noreferrer">Don't have it yet? Anthropic's install guide ↗</a></p>
+      </div>
+
+      <div class="setup" id="let-claude" role="region" aria-labelledby="h-let-claude">
+        <h2 id="h-let-claude">Let Claude set it up for you</h2>
+        <p class="setup-lede">You don't have to follow the steps yourself. Claude Code can read this page and do the setup with you. Pick the pace that suits you.</p>
+        <div class="setup-grid">
+          <div class="setup-opt">
+            <small>Gentlest start · one tip at a time</small>
+            <h3>Have Claude walk you through it</h3>
+            <p>Open Claude Code and paste this. Claude lists the tips in plain words, you choose, and it sets up each one only after you say yes.</p>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p-guide">Copy</button>
+              <div id="p-guide">Read https://fun-claude-code.netlify.app. It's a page of tips for Claude Code, and I'm new to this. List the tips in plain words and ask which ones I want. Then set up the ones I pick, one at a time. Before each change, tell me what it does and which file it touches, and wait for my OK. Don't install anything or change any settings without asking me first.</div>
+            </div>
+          </div>
+          <div class="setup-opt">
+            <small>Want the whole setup at once?</small>
+            <h3>Install my starter kit</h3>
+            <p>The starter kit is my own Claude Code setup, packaged so you can install it in one go: safety hooks that block risky commands and back up files before Claude edits them, ready-made commands for starting and wrapping up a session, and templates like a memory file to fill in. Type these two lines inside Claude Code, one at a time:</p>
+            <div class="code-wrap">
+              <button class="copy-btn" data-copy="c-kit">Copy</button>
+              <pre class="code"><code id="c-kit">/plugin marketplace add https://github.com/marianasmall/claude-code-starter-kit
+/plugin install kit@claude-code-starter-kit</code></pre>
+            </div>
+            <p class="setup-small">It adds a lot at once. If you're brand new, the walk-through is the gentler start. <a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">See what's in the kit ↗</a></p>
+          </div>
+        </div>
+        <p class="safety-line"><b>One rule for any setup:</b> only let Claude install things from sources you trust, and read what it says it's about to change before you say yes.</p>
+      </div>
+
+      <h2 id="h-start">Or pick one and try it yourself</h2>
+      <p>Never tried a tip before? Start with the colors. It takes five seconds and you see the change right away. Next, turn on plan mode, so Claude shows you its plan before it touches anything. When you take on something big, come back for <a href="#subagent-builds">the two-step for big builds</a>. That's the one that changes how you work.</p>
       <div class="quick">
         <a href="#themes"><small>Start here · 5 seconds</small><b>Change the colors</b><span>One line, no restart.</span></a>
-        <a href="#subagent-builds"><small>Next real build</small><b>The two-step for big builds</b><span>A plan first, then a team of helper Claudes.</span></a>
+        <a href="#plan-mode"><small>Next · 10 seconds</small><b>See the plan first</b><span>Claude shows its plan and waits for your OK.</span></a>
+        <a href="#claude-md"><small>When you're ready · 10 minutes</small><b>Teach Claude how you work</b><span>A memory file, so you stop repeating yourself.</span></a>
       </div>
 
       <p class="pick-label" id="pick-label">Or pick what you want out of it</p>
@@ -398,18 +471,35 @@
 
       <div class="about">
         <div>
-          <h3>It's personal</h3>
-          <p>Claude Code is yours once you name the spinner, pick the mascot, and set the mood. Defaults become a character.</p>
+          <h3>How this page works</h3>
+          <p>Tap a card to open it, follow <em>Do it</em>, then tap <em>I tried it</em>. Your progress is saved in this browser only. Every tip is dated, so you know what's current.</p>
         </div>
         <div>
-          <h3>Read here, install from the kit</h3>
-          <p>This page explains; the <a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">starter kit repo</a> carries the files. Each tip is tagged: <em>paste-and-go</em> needs nothing installed; <em>in the starter kit</em> means kit owners already have it.</p>
+          <h3>The two labels on the cards</h3>
+          <p><em>Paste-and-go</em>: nothing to install, just paste. <em>In the starter kit</em>: if you installed the <a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">starter kit</a> above, you already have it.</p>
         </div>
         <div>
           <h3>You don't have to code</h3>
-          <p>Every tip here has a shortcut: paste a prompt into Claude and it writes the config for you. Copy, paste, done. Tick the circle on a card once you've tried it; your progress stays in this browser.</p>
+          <p>Every tip has a sentence you can paste so Claude does the work. If you'd rather not touch settings files at all, use the <a href="#let-claude">walk-through prompt</a> above.</p>
         </div>
       </div>
+
+      <details class="glossary" id="words">
+        <summary>Words you'll see on this page</summary>
+        <dl>
+          <dt>Terminal</dt><dd>The plain text window where you type commands. On a Mac, it's the app called Terminal.</dd>
+          <dt>Session</dt><dd>One conversation with Claude Code. You can have several open at once, each in its own tab.</dd>
+          <dt>Slash command</dt><dd>A shortcut you type inside Claude Code, starting with <code>/</code>, like <code>/config</code>.</dd>
+          <dt>Settings file</dt><dd><code>~/.claude/settings.json</code>, where Claude Code keeps your preferences. The <code>~</code> means your home folder, and the dot in <code>.claude</code> makes the folder hidden. The easy way to change it: ask Claude Code to do it and show you the change.</dd>
+          <dt>JSON</dt><dd>The text format settings are written in: curly braces, quotes, and colons. Claude can write it for you.</dd>
+          <dt>CLAUDE.md</dt><dd>Claude's memory file. Plain-text instructions it reads at the start of every session.</dd>
+          <dt>Plugin</dt><dd>An add-on pack for Claude Code. You install one with a <code>/plugin</code> command.</dd>
+          <dt>Hook</dt><dd>A small action that runs on its own at a set moment, like playing a sound when Claude finishes.</dd>
+          <dt>Skill</dt><dd>A saved set of instructions for a job you do often, so you don't explain it twice.</dd>
+          <dt>Statusline</dt><dd>The strip of info along the bottom of Claude Code.</dd>
+          <dt>Repo</dt><dd>Short for repository: a project folder stored on GitHub. The starter kit lives in one.</dd>
+        </dl>
+      </details>
     </section>
 
     <!-- ================================================================ -->
@@ -426,7 +516,7 @@
           <div>
             <div class="eyebrow">P1 · Subagent-driven builds <span class="done-chip">Tried</span></div>
             <h3 class="title">The two-step for big builds</h3>
-            <p class="hook">For anything substantial — several files, multiple decisions, more than 30 minutes of work — don't just ask for the thing. Ask for a plan, then let a team of fresh helper Claudes ("sub-agents") build it, while the smartest one directs and checks the work.</p>
+            <p class="hook">For anything big (several files, lots of decisions, more than 30 minutes of work), don't just ask for the thing. Ask for a plan first. Then a team of fresh helper Claudes ("sub-agents") builds it, while the smartest one directs and checks the work. You get fewer mistakes without having to catch them yourself.</p>
             <div class="meta"><span class="date-pill">Added Aug 7, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 2 min</span></div>
@@ -483,7 +573,7 @@
           <div>
             <div class="eyebrow">P2 · Self-naming tabs <span class="done-chip">Tried</span></div>
             <h3 class="title">Terminal tabs that name themselves</h3>
-            <p class="hook">Run three Claude sessions at once and never lose track — each tab names itself after what that conversation is actually about. Total sanity-saver.</p>
+            <p class="hook">Running more than one Claude conversation at once, each in its own terminal tab? Each tab names itself after what that conversation is about, so you never type into the wrong one. Total sanity-saver.</p>
             <div class="meta"><span class="date-pill">Added Aug 7, 2026</span><span class="path-badge path-kit">In the starter kit</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
@@ -497,7 +587,7 @@
           </div>
           <section class="panel" data-panel="do">
             <h3>Paste this into Claude Code — it installs itself</h3>
-            <p>One paste and your Claude does the setup for you:</p>
+            <p>One paste and Claude does the setup for you. It installs the starter kit's statusline (the strip of info along the bottom of Claude Code), and the tab names come with it:</p>
             <div class="prompt-box">
               <button class="copy-btn" data-copy="p9">Copy</button>
               <div id="p9">Set up the statusline from https://github.com/marianasmall/claude-code-starter-kit — copy examples/statusline.sh to ~/.claude/statusline.sh, make it executable, and wire the statusLine block into my ~/.claude/settings.json. Don't overwrite anything I already have; if I already have a statusline, show me what to merge.</div>
@@ -833,7 +923,7 @@ description: Build the monthly client report from the analytics exports
     <!-- ================================================================ -->
     <section class="bucket" id="stay-safe" data-bucket="safe" aria-labelledby="h-safe">
       <div class="section-label" id="h-safe">Stay safe</div>
-      <p class="bucket-lede">Hand Claude real work without worrying about what it touches.</p>
+      <p class="bucket-lede">Hand Claude real work without worrying about what it touches. Start with plan mode. The last card is a bigger build for when you're comfortable.</p>
 
       <!-- P6 -->
       <article class="card" id="plan-mode" data-step="P6" data-first-tab="do">
@@ -896,7 +986,7 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">P9 · Secrets <span class="done-chip">Tried</span></div>
             <h3 class="title">Get your API keys off your disk</h3>
-            <p class="hook">If you've ever pasted an API key into a file, it's sitting there in plaintext — readable by any process, one accidental commit away from public. Your password manager can serve keys to Claude Code at runtime instead, so the disk holds nothing worth stealing.</p>
+            <p class="hook">An API key is a password that lets a tool use a paid service. If you've ever pasted one into a file, it's sitting there in plain text. Any program on your computer can read it, and one careless upload to GitHub makes it public. Your password manager can hand keys to Claude Code only at the moment they're needed, so your disk holds nothing worth stealing.</p>
             <div class="meta"><span class="date-pill">Added Aug 7, 2026</span><span class="path-badge path-kit">In the starter kit</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 10 min</span></div>
@@ -1006,7 +1096,7 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">P11 · Scoped texts <span class="done-chip">Tried</span></div>
             <h3 class="title">Give Claude your work texts (and nothing else)</h3>
-            <p class="hook">"Let AI read my texts" has always meant all of them — family, doctors, everything. That's the wrong trade, so nobody makes it. The fix: a group in your Mac's Contacts app becomes the permission. Whoever is in the group is visible to Claude; everyone else doesn't exist.</p>
+            <p class="hook">"Let AI read my texts" has always meant all of them — family, doctors, everything. That's the wrong trade, so nobody makes it. The fix: a group in your Mac's Contacts app becomes the permission. Whoever is in the group is visible to Claude; everyone else doesn't exist. A bigger project: save it for when you're comfortable.</p>
             <div class="meta"><span class="date-pill">Added Aug 19, 2026</span><span class="path-badge path-kit">In the starter kit</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 30 min</span></div>
@@ -1062,7 +1152,7 @@ description: Build the monthly client report from the analytics exports
     <!-- ================================================================ -->
     <section class="bucket" id="fun" data-bucket="yours" aria-labelledby="h-yours">
       <div class="section-label" id="h-yours">Make it yours</div>
-      <p class="bucket-lede">Seven customizations that turn the default terminal into <em>your</em> terminal. Added April 2026.</p>
+      <p class="bucket-lede">Seven small changes that make Claude Code look and sound like <em>yours</em>. Low stakes and fun, so they make good first tips. Added April 2026.</p>
 
       <!-- 01 -->
       <article class="card" id="spinner-verbs" data-step="01" data-first-tab="do">
@@ -1110,6 +1200,7 @@ description: Build the monthly client report from the analytics exports
                 <span class="preview-line"><span class="pulse">⠹</span> <span class="accent">Reading the room…</span></span>
               </div>
             </div>
+            <p class="easy-note"><b>Rather not edit the settings file yourself?</b> Paste the same prompt into Claude Code instead and add: "then add it to my settings for me, and show me the change first." Or use the <a href="#let-claude">walk-through prompt</a> at the top of the page.</p>
             <div class="card-foot"><p>New verbs spinning? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="further">
@@ -1181,6 +1272,7 @@ description: Build the monthly client report from the analytics exports
                 <span class="preview-line"><span class="dim">💭 Did you drink water today?</span></span>
               </div>
             </div>
+            <p class="easy-note"><b>Rather not edit the settings file yourself?</b> Paste the same prompt into Claude Code instead and add: "then add it to my settings for me, and show me the change first." Or use the <a href="#let-claude">walk-through prompt</a> at the top of the page.</p>
             <div class="card-foot"><p>Seeing your tips? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="further">
@@ -1214,7 +1306,7 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">03 · Status line · mascot <span class="done-chip">Tried</span></div>
             <h3 class="title">The bar at the bottom</h3>
-            <p class="hook">Always visible. Put an emoji mascot, your name, the time, or a live dashboard showing your git branch and model.</p>
+            <p class="hook">The strip along the bottom of Claude Code is always visible. Put an emoji mascot there, your name, the time, or a live dashboard showing which model you're using and your git branch (if you use git).</p>
             <div class="meta"><span class="date-pill">Apr 2026 · verified Aug 2026</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 10 min</span></div>
@@ -1227,7 +1319,7 @@ description: Build the monthly client report from the analytics exports
           </div>
           <section class="panel" data-panel="do">
             <h3>Ask Claude.ai to write the script</h3>
-            <p>Don't know bash? Describe what you want and <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a> will write the script:</p>
+            <p>Never written a script? You don't need to. Describe what you want and <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude.ai</a> will write the script:</p>
             <div class="prompt-box">
               <button class="copy-btn" data-copy="p3">Copy</button>
               <div id="p3">Write me a bash script for Claude Code's <code>statusLine</code> command that shows <span class="slot">[WHAT YOU WANT]</span>. Return the full script ready to save as <code>~/.claude/statusline.sh</code>, plus the <code>chmod</code> step and the JSON snippet for <code>settings.json</code>.</div>
@@ -1252,6 +1344,7 @@ description: Build the monthly client report from the analytics exports
                 <span class="preview-line">🤖 Opus · 💾 73% · 💰 $0.42</span>
               </div>
             </div>
+            <p class="easy-note"><b>Rather skip the saving and wiring?</b> Paste the same prompt into Claude Code instead and add: "then save the script and set it up for me, and show me each change first." Or use the <a href="#let-claude">walk-through prompt</a> at the top of the page.</p>
             <div class="card-foot"><p>Bar looking like you? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="further">
@@ -1334,6 +1427,7 @@ description: Build the monthly client report from the analytics exports
                 <span class="preview-line">thing you want it to teach you?</span>
               </div>
             </div>
+            <p class="easy-note"><b>Rather not save the file yourself?</b> Paste the same prompt into Claude Code instead and add: "then save the file for me and tell me how to switch to it." Or use the <a href="#let-claude">walk-through prompt</a> at the top of the page.</p>
             <div class="card-foot"><p>Tried a new voice? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="further">
@@ -1433,6 +1527,7 @@ Never write more than one file without pausing to check in.</code></pre>
 }</code></pre>
             </div>
             <p><code>Stop</code> fires when Claude finishes a turn. <code>Notification</code> fires when Claude is waiting for you.</p>
+            <p class="easy-note"><b>Rather not edit the settings file yourself?</b> Tell Claude Code which sounds you picked and ask it to add them to your settings for you, showing you the change first. Or use the <a href="#let-claude">walk-through prompt</a> at the top of the page.</p>
             <div class="card-foot"><p>Heard the bell? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="short">
@@ -1553,6 +1648,7 @@ Never write more than one file without pausing to check in.</code></pre>
                 <span class="preview-line"><span class="accent">/elevator</span> <span class="dim">30-sec pitch from an idea</span></span>
               </div>
             </div>
+            <p class="easy-note"><b>Rather not save the file yourself?</b> Paste the same prompt into Claude Code instead and add: "then save it for me." Or use the <a href="#let-claude">walk-through prompt</a> at the top of the page.</p>
             <div class="card-foot"><p>Typed your first one-word command? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="further">
@@ -1582,9 +1678,10 @@ Smart, not corny. One joke only.</code></pre>
     </section>
 
     <section class="closing" aria-label="What to do next">
-      <p>Want the files behind these tips in one install, or the official reference?</p>
+      <p>Want everything in one install, more things to try, or the official manual?</p>
       <div class="closing-links">
         <a class="btn-primary" href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">Get the starter kit ↗</a>
+        <a class="btn-ghost" href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/automation-recipes/README.md" target="_blank" rel="noopener noreferrer">Recipes for non-coders ↗</a>
         <a class="btn-ghost" href="https://code.claude.com/docs" target="_blank" rel="noopener noreferrer">Claude Code docs ↗</a>
       </div>
     </section>
@@ -1592,7 +1689,7 @@ Smart, not corny. One joke only.</code></pre>
 
   <footer>
     <div class="wrap">
-      <p>Built with Claude Code by <a href="https://resonantgrowth.com" target="_blank" rel="noopener noreferrer">Mariana Small · ResonantGrowth</a>. Share freely.</p>
+      <p>Built with Claude Code by <a href="https://resonantgrowth.ai" target="_blank" rel="noopener noreferrer">Mariana Small · ResonantGrowth</a>. Share freely.</p>
     </div>
   </footer>
 
