@@ -44,4 +44,5 @@ in the kit AND get a site section.
 - `.section:nth-child(even)` alternation counts ALL children of `<main>` — chapter-head divs
   shift parity. Check adjacent-section contrast after inserting sections.
 - `md/` front-matter expects `../style.css` (PDF pipeline; optional).
-- The old `/theme` and `/output-style` mentions on the page are INTENTIONAL historical notes.
+- `/theme` and `/output-style` both exist (verified 2026-10-10, CC 2.1.296). Never describe them as removed or retired.
+- Kit updates: the documented command is `claude plugin update kit@claude-code-starter-kit` (shell) or `/plugin` → Installed → Update now. `/plugin update kit` is undocumented; don't publish it.
