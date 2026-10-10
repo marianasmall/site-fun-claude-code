@@ -1039,7 +1039,7 @@
               </div>
               <p>Needs a reasonably current Claude Code and a small helper tool called <code>jq</code>. If <code>jq</code> is missing, Claude will tell you and help you install it.</p>
               <div class="kit-note">
-                <strong>Already installed the starter kit?</strong> You have this — just run <code>/plugin update kit</code> and the name tags come along.
+                <strong>Already installed the starter kit?</strong> You have this — just run <code>/plugin update kit</code>, then run <code>/kit:verify</code>, and the name tags come along.
               </div>
             </div>
 
@@ -1053,7 +1053,7 @@
                   <pre class="code"><code id="c9">/plugin marketplace add https://github.com/marianasmall/claude-code-starter-kit
 /plugin install kit@claude-code-starter-kit</code></pre>
                 </div>
-                <p>Installing as a plugin means updates flow to you: when new goodies land in the kit, run <code>/plugin update kit</code> once and you're current.</p>
+                <p>Installing as a plugin means updates flow to you: when new goodies land in the kit, run <code>/plugin update kit</code>, then run <code>/kit:verify</code>, and you're current. Not sure which plugins and connectors are worth adding? The kit's <a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/choosing-plugins-and-connectors-primer.md" target="_blank" rel="noopener noreferrer">plugins and connectors primer</a> walks through it.</p>
                 <p><strong>Related:</strong> <a href="#status-line">Fun 03 — the mascot status line</a> lives in the same bar. The kit's statusline and the mascot are cousins; you can merge them.</p>
                 <p class="docs-link"><a href="https://code.claude.com/docs/en/statusline" target="_blank" rel="noopener noreferrer">📖 Official docs: Status line ↗</a></p>
               </div>
@@ -1261,15 +1261,17 @@ description: Build the monthly client report from the analytics exports
             </div>
 
             <details class="self-build">
-              <summary>The three modes, in plain terms</summary>
+              <summary>The modes, in plain terms</summary>
               <div class="self-build-body">
                 <h4>Shift+Tab cycles between them</h4>
                 <ul>
-                  <li><strong>Manual</strong> — Claude asks before each action. The default.</li>
+                  <li><strong>Auto</strong> — Claude runs routine actions itself and checks with you before risky ones. The default since Claude Code 2.1.285.</li>
+                  <li><strong>Manual</strong> — Claude asks before each action. For when you want to watch every step.</li>
                   <li><strong>Plan first</strong> — Claude designs the whole approach, you approve once, then it executes.</li>
                   <li><strong>Auto-accept</strong> — Claude just goes. For work you fully trust.</li>
                 </ul>
-                <p>The habit that sticks: plan mode for anything irreversible, auto-accept for the routine, manual for everything in between.</p>
+                <p>The status line under the prompt shows which mode you're in. To pick your own default, set <code>permissions.defaultMode</code> in <code>~/.claude/settings.json</code>. Using the <a href="https://github.com/marianasmall/claude-code-starter-kit" target="_blank" rel="noopener noreferrer">starter kit</a>? Its safety hooks run underneath every mode, auto included.</p>
+                <p>The habit that sticks: plan mode for anything irreversible, auto for the everyday, manual when you want to see each step.</p>
                 <p class="docs-link"><a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer">📖 Official docs: Permission modes ↗</a></p>
               </div>
             </details>
@@ -1451,7 +1453,7 @@ description: Build the monthly client report from the analytics exports
               </div>
               <p><strong>Why this changes everything:</strong> once nothing can go permanently wrong, you stop supervising every step — and that's when Claude becomes genuinely useful. Reversibility is what trust is made of.</p>
               <div class="kit-note">
-                <strong>Already installed the starter kit?</strong> Part of this is enforced in hardware: the <code>backup-before-edit</code> hook snapshots every file before Claude touches it, and the <code>safety-net</code> hook hard-blocks destructive commands even if Claude tries one.
+                <strong>Already installed the starter kit?</strong> Part of this is enforced in hardware: the <code>backup-before-edit</code> hook snapshots every file before Claude touches it, and the <code>safety-net</code> hook hard-blocks destructive commands even if Claude tries one. Installed before Oct 9, 2026? Run <code>/plugin update kit</code>, then <code>/kit:verify</code> — version 0.2.1 fixed a bug where these hooks didn't load.
               </div>
             </div>
 
