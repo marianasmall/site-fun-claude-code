@@ -941,7 +941,7 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">P12 · Long sessions <span class="done-chip">Tried</span></div>
             <h3 class="title">Four habits for long days</h3>
-            <p class="hook">Claude gets slower, and your usage limit drains faster, the longer one conversation runs. Nothing is broken. Claude re-reads the whole conversation every time you send a message, so a long one gets heavy. Four small habits keep it light.</p>
+            <p class="hook">Claude gets slower, and hits your usage limit sooner, the longer one conversation runs. Nothing is broken. Claude re-reads the whole conversation every time you send a message, so a long one gets heavy. Four small habits fix most of it. Each takes a few seconds, and none of them needs any technical knowledge.</p>
             <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
@@ -955,18 +955,18 @@ description: Build the monthly client report from the analytics exports
           </div>
           <section class="panel" data-panel="do">
             <h3>Four habits, each one a single command</h3>
-            <p>Type these inside Claude Code. You don't need all four at once; pick the one that matches your day.</p>
+            <p>Anything that starts with a slash is just something you type into Claude Code and press enter. It isn't code, and there's nothing to install. You don't need all four habits at once; pick the one that matches your day.</p>
             <ol>
-              <li><strong>Starting something unrelated? Type <code>/clear</code>.</strong> It begins a fresh conversation. If you'll want the old one back, type <code>/rename</code> first so you can find it later with <code>/resume</code>.</li>
-              <li><strong>Feeling slow? Type <code>/context</code>.</strong> It shows what's taking up room. Then type <code>/mcp</code> to see your connected tools and switch off any you aren't using.</li>
-              <li><strong>Pick your model at the start and stay on it.</strong> Switching models with <code>/model</code> in the middle of a task makes the next reply slower, because the new model has to re-read everything.</li>
-              <li><strong>Before a break, or between tasks, tell Claude what to keep:</strong></li>
+              <li><strong>Starting something unrelated? Type <code>/clear</code>.</strong> It begins a fresh conversation. Without it, the invoice you finished is still in the conversation while you ask about a press release, and Claude keeps re-reading it all afternoon. If you'll want the old conversation back, type <code>/rename</code> first to name it, then clear. Reopen it later with <code>/resume</code>.</li>
+              <li><strong>Sitting down for a long session? Type <code>/context</code>.</strong> It shows what's already in the conversation before you've typed a word, and how much room each thing takes. Every connected tool (Gmail, Drive, a spreadsheet app) describes itself at the start of every message, whether you use it that day or not. Type <code>/mcp</code> to switch off the ones you don't need. (MCP is just the name for those connections.)</li>
+              <li><strong>Pick your model at the start, then leave it alone.</strong> Switching with <code>/model</code> halfway through makes the next reply slower, because the new model has to read everything from the beginning. Turning on fast mode mid-session does the same. Bigger isn't automatically better: a smaller model is quicker and handles precise, well-described or mechanical jobs well. Keep the biggest for work that's genuinely hard or vague.</li>
+              <li><strong>Tidy up before you walk away, not after you come back.</strong> On a Claude subscription, Claude keeps your conversation quick to reload for about an hour. Heading into a meeting, or stopping for the day? Tell Claude what to keep and compact first:</li>
             </ol>
             <div class="prompt-box">
               <button class="copy-btn" data-copy="p19">Copy</button>
               <div id="p19">/compact keep the decisions we made, the files we changed, and the open questions</div>
             </div>
-            <p>That shrinks the conversation into a summary and keeps what you named. Went down the wrong path instead? <code>/rewind</code> takes you back to an earlier point.</p>
+            <p>That swaps the long conversation for a short summary that keeps what you named. Do it an hour later and Claude pays full price for one last complete read first.</p>
             <div class="card-foot"><p>Tried one of the four? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="why">
@@ -981,12 +981,22 @@ description: Build the monthly client report from the analytics exports
                 <span class="preview-line"><span class="accent">✓ Conversation summarized</span></span>
               </div>
             </div>
-            <h4>The conversation is re-sent every time</h4>
-            <p>Claude has no memory between messages. Each time you write, Claude Code sends the whole conversation again, so a one-line question late in the day still carries the whole day. Claude Code reuses what it already processed to keep this cheap, but that stored copy expires if you step away for a while. The first message after a long break is the slow, expensive one.</p>
+            <h4>Claude has no memory between messages</h4>
+            <p>Picture a folder of notes on a desk. Every time you send a message, Claude is handed the whole folder and reads it from page one: its own instructions, every document it has opened, everything you've both said. Only then does it reach your new message at the very end. Ask forty questions in one sitting and on the fortieth it's re-reading the previous thirty-nine.</p>
+            <p>One thing helps. Pages at the front of the folder that are exactly the same as last time get skimmed, which is much quicker. But change something near the front and Claude has to read properly again from that point on. The four habits are all ways of keeping the folder thin, or keeping the front of it still.</p>
+            <p><strong>If you're on a subscription, "cheaper" means "you get further before Claude makes you stop."</strong> Plans have a usage window. Work hard for long enough and Claude tells you to wait. These habits push that point back. The skimmed copy expires if you step away for a while, so the first message after a long break is the slow, expensive one.</p>
             <p><strong>Why <code>/clear</code> beats <code>/compact</code> for a fresh start:</strong> compacting has to read the whole conversation to summarize it, so it isn't free. Clearing is. Use <code>/compact</code> when you want to keep the thread, and <code>/clear</code> when you don't.</p>
-            <p class="docs-link"><a href="https://code.claude.com/docs/en/costs" target="_blank" rel="noopener noreferrer">📖 Official docs: Manage costs ↗</a></p>
+            <p class="docs-link"><a href="https://code.claude.com/docs/en/costs" target="_blank" rel="noopener noreferrer">📖 Official docs: Manage costs ↗</a> · <a href="https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions" target="_blank" rel="noopener noreferrer">Anthropic's write-up: maximizing the value of your sessions ↗</a></p>
           </section>
           <section class="panel" data-panel="short">
+            <h3>Three smaller ones</h3>
+            <ul>
+              <li><strong>Tell Claude which file you mean.</strong> "Fix the pricing in the September deck" sends it hunting. Type <code>@</code> and pick the file instead, and the hunt is skipped.</li>
+              <li><strong>Heading the wrong way? Type <code>/rewind</code>.</strong> It tears out the last few turns and takes you back to an earlier point. Unlike compacting, it keeps what came before intact, so it costs almost nothing. Better than arguing with it.</li>
+              <li><strong>Push messy jobs to a sub-agent.</strong> A sub-agent is a second Claude working in its own separate conversation. It reads the messy thing (a full meeting transcript, a long list of files) and comes back with just the answer. Say "do that in a sub-agent."</li>
+            </ul>
+            <h4>When Claude gives you something wrong</h4>
+            <p>Ask which kind of wrong it was, because the fix differs. If it <em>didn't know enough</em> (went the wrong way, missed how things fit together), move up to a bigger model with <code>/model</code>. If it <em>didn't try hard enough</em> (skipped a file, stopped halfway, went shallow), raise its effort with <code>/effort</code>. It works the other way too: if Claude writes an essay when you asked it to change one word, turn the effort down.</p>
             <h3>Write the instruction once</h3>
             <h4>Tell Claude what to keep every time it compacts</h4>
             <p>Claude also compacts on its own when a conversation gets full. Paste this so it knows what matters when that happens:</p>
@@ -995,6 +1005,7 @@ description: Build the monthly client report from the analytics exports
               <div id="p20">Add a "Compact instructions" section to my CLAUDE.md that tells you what to keep when a conversation is compacted: the decisions we made, the files we changed, anything waiting on me, and my standing rules.</div>
             </div>
             <p>CLAUDE.md is the memory file from <a href="#claude-md">P4</a>. The new section takes effect in your next conversation.</p>
+            <p><strong>Make it yours:</strong> this is how one person runs it. Tell Claude which of these habits you want, and it will set them up to suit how you work.</p>
             <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/context-budget-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: context budget ↗</a></p>
           </section>
         </div>
@@ -1007,7 +1018,7 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">P13 · Meeting recordings <span class="done-chip">Tried</span></div>
             <h3 class="title">Ask Claude about your meetings</h3>
-            <p class="hook">If you record meetings with a voice recorder or a note-taking app, Claude can search and read those recordings. Ask who owes what, what was decided, or what you promised someone, and get an answer instead of a replay.</p>
+            <p class="hook">A recording nobody listens to is just storage. Connect your voice recorder or meeting notes app to Claude and it can search and read every recording. Ask what you promised someone, which meetings mentioned the budget, or for a draft follow-up to Tuesday's meeting, and get the answer instead of a replay. Setup is about five minutes.</p>
             <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
@@ -1022,17 +1033,20 @@ description: Build the monthly client report from the analytics exports
           <section class="panel" data-panel="do">
             <h3>Connect your recorder, then ask</h3>
             <ol>
-              <li>In claude.ai, open the left sidebar and go to <strong>Customize &gt; Connectors</strong>.</li>
-              <li>Search for your meeting recorder or note-taking app. If it's listed, click <strong>Connect</strong> and sign in with the account your recordings live in.</li>
-              <li>Check it worked by pasting this:</li>
+              <li><strong>Check the recorder is signed in to your own account, with cloud sync on.</strong> Recordings land in whichever account the device is paired to, and Claude reads the cloud copy, not the device. If you inherited a device from someone else, they need to unpair it first.</li>
+              <li>In claude.ai, open the left sidebar and go to <strong>Customize &gt; Connectors</strong>. Search for your meeting recorder or note-taking app. If it's listed, click <strong>Connect</strong> and sign in with the account from step 1.</li>
+              <li><strong>Verify it. This step isn't optional.</strong> Paste this:</li>
             </ol>
             <div class="prompt-box">
               <button class="copy-btn" data-copy="p21">Copy</button>
-              <div id="p21">List my five most recent meeting recordings, with the date and title of each.</div>
+              <div id="p21">List my recent recordings, with the date and title of each.</div>
             </div>
-            <p>If you see your latest recordings, you're set. If the list is empty, the recorder is probably signed in to a different account, or its cloud sync is off.</p>
-            <p>Then ask the questions you actually have: <em>"Summarize yesterday's meeting and list who owes what."</em> or <em>"What did I promise in my last call with a client?"</em></p>
-            <p class="section-note"><strong>On a work plan?</strong> On Team and Enterprise plans, an admin may need to switch a connector on before members can connect it. Not every recorder has a connector. If yours isn't in the list, this tip won't work yet.</p>
+            <p>Then ask: <em>"Summarize the newest one and list the action items."</em> If you see your latest recordings, you're set. If the list is empty, the device is paired to a different account, or its cloud sync is off.</p>
+            <ol start="4">
+              <li><strong>Make the habit that pays off.</strong> While you record, say instructions out loud with a fixed prefix, like <em>"for the bots: remind me to send the deck."</em> Later, ask Claude to find everything you said for the bots in the last few days. Those lines are short and explicit, so they're easy to miss in a long transcript and easy to find by the phrase.</li>
+            </ol>
+            <p>Then ask the questions you actually have: <em>"What did I promise in my last call with a client?"</em> or <em>"Which recordings mention the budget?"</em></p>
+            <p class="section-note"><strong>Each person connects their own account.</strong> Connectors are switched on per account, and everyone signs in with their own login. On Team and Enterprise plans, an admin may need to switch a connector on before members can connect it. Not every recorder has a connector. If yours isn't in the list, this tip won't work yet.</p>
             <div class="card-foot"><p>Got an answer from a recording? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="why">
@@ -1046,14 +1060,14 @@ description: Build the monthly client report from the analytics exports
               </div>
             </div>
             <p><strong>What it can do:</strong> find recordings by name, keyword, or date; read the full transcript; read the app's own summary and action items. It reads. It can't delete or change anything.</p>
-            <p><strong>One honest caveat:</strong> transcripts are machine-written. Names and unusual words often come out wrong, and some apps clean up the wording. Use them to find things fast. When exact words matter, check the original recording.</p>
+            <p><strong>One honest caveat:</strong> what Claude reads is the recorder's cleaned-up version of the transcript. It's good for summaries and action items, not for quoting someone word for word. Names and unusual words often come out wrong, especially in noisy rooms. Check any name before you put it in an email, and listen to the original when exact words matter.</p>
             <p><strong>Think about what gets recorded.</strong> A recorder that's always on picks up everything, including calls you wouldn't want anywhere else. Connect only the account you're comfortable with Claude reading.</p>
           </section>
           <section class="panel" data-panel="further">
-            <h3>Talk to Claude while you record</h3>
-            <h4>A spoken prefix makes the important lines findable</h4>
-            <p>Pick a phrase and say it out loud during meetings, like <em>"for Claude: remind me to send the deck."</em> Later, ask Claude to find everything you said after that phrase. Those lines are short, explicit instructions, so they're easy to miss in a long transcript and easy to find by the phrase.</p>
-            <p>Connectors also work in Claude Code. Your connected tools come along with your Claude account, and <code>/mcp</code> shows them. Not sure which connectors are worth adding? The kit's <a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/choosing-plugins-and-connectors-primer.md" target="_blank" rel="noopener noreferrer">plugins and connectors primer</a> walks through it.</p>
+            <h3>It works in Claude Code too</h3>
+            <h4>Nothing extra to install</h4>
+            <p>The connection follows your Claude account. It works in the desktop app, on your phone, and in Claude Code. In Claude Code, <code>/mcp</code> shows your connected tools once they've carried over. Not sure which connectors are worth adding? The kit's <a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/choosing-plugins-and-connectors-primer.md" target="_blank" rel="noopener noreferrer">plugins and connectors primer</a> walks through it.</p>
+            <p><strong>Make it yours:</strong> this is one way to run it. Treat it as a starting point and tell Claude what to change, like which phrase you use or what you want pulled out of each meeting.</p>
           </section>
         </div>
       </article>
@@ -1124,7 +1138,7 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">P15 · Next actions <span class="done-chip">Tried</span></div>
             <h3 class="title">Put what's left on your calendar, not in the chat</h3>
-            <p class="hook">Most work sessions end with something only you can do: send an email, approve a draft, make a call. Claude writes it in the chat, the chat scrolls away, and it's gone. Ask Claude to put it on your calendar instead, with everything you'll need to do it from your phone.</p>
+            <p class="hook">Most work sessions end with something only you can do: a login only you have, an email to send, an approval, a screen Claude can't click. Claude writes it in a tidy summary, the chat scrolls away, and it's gone. Tell Claude to put it on your calendar instead, with the exact links, folders and logins you'll need, so you can act on it from your phone without opening your laptop. Works in claude.ai and in Claude Code. Setup is about five minutes.</p>
             <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
@@ -1138,13 +1152,15 @@ description: Build the monthly client report from the analytics exports
           </div>
           <section class="panel" data-panel="do">
             <h3>Add one standing rule</h3>
-            <p>First, connect your calendar so Claude can create events (<strong>Customize &gt; Connectors</strong> in claude.ai, or <code>/mcp</code> in Claude Code). Then paste this into Claude Code:</p>
+            <p><strong>What you get:</strong> events created as the work happens, not written down afterwards. Each one carries the real locations: file paths, which folder, which project, the web links, and which account to sign in as. Where a login is needed, it says where the password lives, never the password itself. And for work you'll carry on later, there's a block you can copy on your phone and paste into a fresh Claude chat to restart exactly where you left off. A half-finished job becomes one copy and paste away from restarting instead of a re-explanation.</p>
+            <p><strong>Step 1: connect your calendar</strong> so Claude can create events. In claude.ai, that's the Google Calendar connector under <strong>Customize &gt; Connectors</strong>. In Claude Code, you need a calendar connection (Google Calendar or Outlook); <code>/mcp</code> shows what you have. Without it Claude can't create anything.</p>
+            <p><strong>Step 2: install the rule.</strong> It has to live somewhere Claude reads every time, or it works once and disappears. In Claude Code, paste this and it goes into your memory file:</p>
             <div class="prompt-box">
               <button class="copy-btn" data-copy="p23">Copy</button>
               <div id="p23">Add this standing rule to my CLAUDE.md: "Schedule anything I need to do later. When we finish something and it ends with an action only I can take (an email to send, an approval, a decision, a login-gated edit), create a calendar event for it right then. Don't just tell me in chat. Every event description must include the exact steps, every link and file path I need, which account to sign in as, and why it matters. Never put a password in an event; say where it's stored. The test: I can act on that event alone, from my phone, weeks later. Check my calendar first for conflicts and duplicates, group related items into one slot, default to 15 minutes, and never send invitations to other people."</div>
             </div>
-            <p>It has to live in your memory file (<a href="#claude-md">P4</a>). Pasted into a single chat, it applies once and then disappears.</p>
-            <p><strong>Then test it.</strong> End a real session with something that's waiting on you. Open the event on your phone. Can you do the thing from what's written there, without asking Claude where anything is? If not, tell Claude what was missing.</p>
+            <p>CLAUDE.md is your memory file (<a href="#claude-md">P4</a>). In claude.ai, paste the quoted rule into your custom instructions in Settings instead, or into a Project's instructions to limit it to one body of work. Pasted into a single chat, it applies to that chat only.</p>
+            <p><strong>Then check it worked. Do this once, on purpose.</strong> End a real session with something that's blocked on you, then open the event on your phone. Can you do the thing from what's written there, without opening your laptop and without asking a follow-up question? If not, tell Claude what was missing. It calibrates fast, and that correction is worth more than any wording you could have specified up front.</p>
             <div class="card-foot"><p>Got a real event out of it? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="why">
@@ -1159,12 +1175,20 @@ description: Build the monthly client report from the analytics exports
             </div>
             <p><strong>Locations are the difference between a reminder and a working instruction.</strong> An event that says "send the deck" without saying where the deck is just sends you back to Claude to ask. That's the interruption the event was supposed to replace.</p>
             <p><strong>Only things waiting on you belong there.</strong> If everything becomes an event, the calendar stops meaning anything. Work Claude can do itself should just get done.</p>
+            <p><strong>One honest caveat:</strong> the reliable half is capturing each item at the moment Claude hits something only you can do. The "sweep back at the end of the session" half is weaker, because Claude has no way to tell that a session is ending. If you want that sweep, hook it to something you actually do: a wrap-up command you run, or a phrase you say. Otherwise it will quietly never fire.</p>
           </section>
           <section class="panel" data-panel="short">
             <h3>Work you'll pick back up later</h3>
             <h4>A paste-ready block, inside the event</h4>
             <p>When the next step is "keep going on this project," ask Claude to end the event description with a block you can paste into a fresh conversation: what the work is, where everything lives, what's done, what's next, and what not to touch. Your phone is then enough to restart the work.</p>
             <p>Keep work and personal calendars apart? Say which is which in the rule, or Claude will use your main one.</p>
+            <h4>Or let Claude do the setup</h4>
+            <p>Prefer one line? Paste this and Claude reads the guide and sets the rule up for you:</p>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p25">Copy</button>
+              <div id="p25">Read https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/calendar-handoff-primer.md and set this up for me.</div>
+            </div>
+            <p><strong>Make it yours:</strong> this is how one person runs it, tuned to how they work. Treat it as a starting point and tell Claude what to change: the timing, the level of detail, or what deserves an event at all.</p>
             <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/calendar-handoff-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: calendar handoff ↗</a></p>
           </section>
         </div>
@@ -1177,7 +1201,7 @@ description: Build the monthly client report from the analytics exports
           <div>
             <div class="eyebrow">P16 · Catch-up briefs <span class="done-chip">Tried</span></div>
             <h3 class="title">Brief anyone on a messy project in one ask</h3>
-            <p class="hook">Someone joined late, or you've been out, and the history is scattered across email, meetings, and documents. Ask Claude to read it all and write the briefing: where things stand, who's waiting on whom, and what nobody knows yet.</p>
+            <p class="hook">A skill that assembles a proper briefing on any project whose history is scattered. Say "bring me up to speed on [topic]" and Claude pulls an inbox, recorded meetings, and records into one readable document. Every time someone joins a project mid-flight (a new hire, a partner, you after three weeks on something else), somebody pays hours reconstructing the history from email. This makes it a five-minute ask.</p>
             <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-kit">In the starter kit</span></div>
           </div>
           <div class="head-right"><span class="badge">⏱ 5 min</span></div>
@@ -1196,7 +1220,15 @@ description: Build the monthly client report from the analytics exports
               <button class="copy-btn" data-copy="p24">Copy</button>
               <div id="p24">Bring <span class="slot">[PERSON]</span> up to speed on <span class="slot">[PROJECT]</span>. Look through my email, calendar, and any connected tools, newest first. Start with a three-sentence bottom line: what's true, what's blocked, and who has the next move. Then give me a timeline of who was waiting on whom, a who's-who, open items with an owner and how long each has been sitting, and a list of what the record can't tell us. Leave out anything private that <span class="slot">[PERSON]</span> shouldn't see, and tell me what you left out.</div>
             </div>
+            <p><strong>What you get back:</strong></p>
+            <ul>
+              <li>A timeline of who was waiting on whom at each step</li>
+              <li>A who's-who, and open items with owners and ages</li>
+              <li>Every claim tagged by source strength: an email beats a transcript, which beats a spreadsheet</li>
+              <li>An honest "what the record can't tell us" section instead of confident guessing</li>
+            </ul>
             <p>Read the brief yourself before it goes to anyone. Claude shows you what it found and what it left out, so you decide what the reader sees.</p>
+            <p><strong>One honest caveat:</strong> it can only read what your Claude can reach, and it's built to tell you what it couldn't see rather than papering over gaps. Big inboxes take a few minutes.</p>
             <div class="card-foot"><p>Briefed someone? Tick it off.</p><button class="btn mark">I tried it</button></div>
           </section>
           <section class="panel" data-panel="why">
@@ -1216,7 +1248,14 @@ description: Build the monthly client report from the analytics exports
             <div class="kit-note">
               <strong>Already installed the starter kit?</strong> This ships as the <code>bring-up-to-speed</code> skill. Ask for it in plain words, like <em>"bring Pat up to speed on the website move,"</em> and Claude uses it.
             </div>
+            <h4>Not using the kit? Install just this skill</h4>
+            <p>In Claude Code (the terminal app, not the claude.ai website), paste this:</p>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p26">Copy</button>
+              <div id="p26">Install the skill bring-up-to-speed from the public repo https://github.com/marianasmall/claude-code-starter-kit (folder: skills/bring-up-to-speed) into ~/.claude/skills/bring-up-to-speed/SKILL.md. Then read it, ask me which email, calendar, document, and meeting tools I use, and adapt its "Gathering the record" section to my setup. Confirm it appears in your skills list and give me one example of something I could use it on.</div>
+            </div>
             <p>The skill can also draft a call agenda and a ready-to-send email to whoever owes answers. Say so in your ask. Claude drafts the email for you to review. It doesn't send it.</p>
+            <p><strong>Make it yours:</strong> treat the skill as a starting point. Tell Claude what to change: which tools to check first, how long the brief should be, or what to leave out.</p>
             <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/skills/bring-up-to-speed/SKILL.md" target="_blank" rel="noopener noreferrer">📖 Read the skill ↗</a></p>
           </section>
         </div>
