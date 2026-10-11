@@ -32,7 +32,7 @@
 
   <!--
     Step-card version (2026-10-10), live. Built with the step-card-builder skill.
-    18 tips, paste-ready text, stable anchor ids, grouped into goal buckets.
+    23 tips, paste-ready text, stable anchor ids, grouped into goal buckets.
     Deploy from a clean export (git archive) so _backups/ never ships.
   -->
   <style>
@@ -412,7 +412,7 @@
       <div class="hero-eyebrow">From a marketer who uses Claude Code every day</div>
       <h1 class="hero-title">Mariana's <em>Claude Code</em> Tips</h1>
       <p class="hero-lede">
-        Make it fun. Make it powerful. These are 18 small things that make Claude Code easier, safer, and more yours.
+        Make it fun. Make it powerful. These are 23 small things that make Claude Code easier, safer, and more yours.
         Each one takes between five seconds and half an hour. You don't need to write code: you copy a sentence,
         paste it into Claude, and Claude does the setup.
       </p>
@@ -423,10 +423,10 @@
   <div class="progress" aria-live="polite">
     <div class="wrap">
       <div class="progress-row">
-        <p class="count" id="countLabel">0 of 18 tried</p>
-        <span class="where" id="whereLabel">Showing all 18 tips</span>
+        <p class="count" id="countLabel">0 of 23 tried</p>
+        <span class="where" id="whereLabel">Showing all 23 tips</span>
       </div>
-      <div class="bar" role="progressbar" aria-label="Tips tried" aria-valuemin="0" aria-valuemax="18" aria-valuenow="0" id="bar"><span></span></div>
+      <div class="bar" role="progressbar" aria-label="Tips tried" aria-valuemin="0" aria-valuemax="23" aria-valuenow="0" id="bar"><span></span></div>
     </div>
   </div>
 
@@ -480,11 +480,11 @@
 
       <p class="pick-label" id="pick-label">Or pick what you want out of it</p>
       <div class="buckets" role="group" aria-labelledby="pick-label">
-        <button class="bucket-btn" data-pick="smarter" aria-pressed="false"><b>Work smarter</b><span>7 tips · stop re-explaining yourself</span></button>
+        <button class="bucket-btn" data-pick="smarter" aria-pressed="false"><b>Work smarter</b><span>12 tips · stop re-explaining yourself</span></button>
         <button class="bucket-btn" data-pick="safe" aria-pressed="false"><b>Stay safe</b><span>4 tips · hand Claude real work, calmly</span></button>
         <button class="bucket-btn" data-pick="yours" aria-pressed="false"><b>Make it yours</b><span>7 tips · five-minute customizations</span></button>
       </div>
-      <button class="show-all" id="showAll" hidden>Show all 18 tips</button>
+      <button class="show-all" id="showAll" hidden>Show all 23 tips</button>
 
       <div class="about">
         <div>
@@ -933,10 +933,298 @@ description: Build the monthly client report from the analytics exports
           </section>
         </div>
       </article>
+
+      <!-- P12 -->
+      <article class="card" id="long-days" data-step="P12" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P12 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P12 · Long sessions <span class="done-chip">Tried</span></div>
+            <h3 class="title">Four habits for long days</h3>
+            <p class="hook">Claude gets slower, and your usage limit drains faster, the longer one conversation runs. Nothing is broken. Claude re-reads the whole conversation every time you send a message, so a long one gets heavy. Four small habits keep it light.</p>
+            <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 5 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> a conversation that has run all day carries everything you said since morning, and you pay for it on every message.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="short">Shortcuts</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Four habits, each one a single command</h3>
+            <p>Type these inside Claude Code. You don't need all four at once; pick the one that matches your day.</p>
+            <ol>
+              <li><strong>Starting something unrelated? Type <code>/clear</code>.</strong> It begins a fresh conversation. If you'll want the old one back, type <code>/rename</code> first so you can find it later with <code>/resume</code>.</li>
+              <li><strong>Feeling slow? Type <code>/context</code>.</strong> It shows what's taking up room. Then type <code>/mcp</code> to see your connected tools and switch off any you aren't using.</li>
+              <li><strong>Pick your model at the start and stay on it.</strong> Switching models with <code>/model</code> in the middle of a task makes the next reply slower, because the new model has to re-read everything.</li>
+              <li><strong>Before a break, or between tasks, tell Claude what to keep:</strong></li>
+            </ol>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p19">Copy</button>
+              <div id="p19">/compact keep the decisions we made, the files we changed, and the open questions</div>
+            </div>
+            <p>That shrinks the conversation into a summary and keeps what you named. Went down the wrong path instead? <code>/rewind</code> takes you back to an earlier point.</p>
+            <div class="card-foot"><p>Tried one of the four? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <div class="preview" aria-hidden="true">
+              <span class="preview-cap">What you'll see</span>
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> /context</span>
+                <span class="preview-line"><span class="dim">Conversation ▮▮▮▮▮▮▮▮▯▯</span></span>
+                <span class="preview-line"><span class="dim">Connected tools ▮▮▮▯▯▯▯▯▯▯</span></span>
+                <span class="preview-line">&nbsp;</span>
+                <span class="preview-line"><span class="prompt">&gt;</span> /compact keep the decisions and open questions</span>
+                <span class="preview-line"><span class="accent">✓ Conversation summarized</span></span>
+              </div>
+            </div>
+            <h4>The conversation is re-sent every time</h4>
+            <p>Claude has no memory between messages. Each time you write, Claude Code sends the whole conversation again, so a one-line question late in the day still carries the whole day. Claude Code reuses what it already processed to keep this cheap, but that stored copy expires if you step away for a while. The first message after a long break is the slow, expensive one.</p>
+            <p><strong>Why <code>/clear</code> beats <code>/compact</code> for a fresh start:</strong> compacting has to read the whole conversation to summarize it, so it isn't free. Clearing is. Use <code>/compact</code> when you want to keep the thread, and <code>/clear</code> when you don't.</p>
+            <p class="docs-link"><a href="https://code.claude.com/docs/en/costs" target="_blank" rel="noopener noreferrer">📖 Official docs: Manage costs ↗</a></p>
+          </section>
+          <section class="panel" data-panel="short">
+            <h3>Write the instruction once</h3>
+            <h4>Tell Claude what to keep every time it compacts</h4>
+            <p>Claude also compacts on its own when a conversation gets full. Paste this so it knows what matters when that happens:</p>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p20">Copy</button>
+              <div id="p20">Add a "Compact instructions" section to my CLAUDE.md that tells you what to keep when a conversation is compacted: the decisions we made, the files we changed, anything waiting on me, and my standing rules.</div>
+            </div>
+            <p>CLAUDE.md is the memory file from <a href="#claude-md">P4</a>. The new section takes effect in your next conversation.</p>
+            <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/context-budget-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: context budget ↗</a></p>
+          </section>
+        </div>
+      </article>
+
+      <!-- P13 -->
+      <article class="card" id="meeting-notes" data-step="P13" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P13 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P13 · Meeting recordings <span class="done-chip">Tried</span></div>
+            <h3 class="title">Ask Claude about your meetings</h3>
+            <p class="hook">If you record meetings with a voice recorder or a note-taking app, Claude can search and read those recordings. Ask who owes what, what was decided, or what you promised someone, and get an answer instead of a replay.</p>
+            <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 5 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> the decisions are in the recordings, and nobody has time to listen back.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="further">Go further</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Connect your recorder, then ask</h3>
+            <ol>
+              <li>In claude.ai, open the left sidebar and go to <strong>Customize &gt; Connectors</strong>.</li>
+              <li>Search for your meeting recorder or note-taking app. If it's listed, click <strong>Connect</strong> and sign in with the account your recordings live in.</li>
+              <li>Check it worked by pasting this:</li>
+            </ol>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p21">Copy</button>
+              <div id="p21">List my five most recent meeting recordings, with the date and title of each.</div>
+            </div>
+            <p>If you see your latest recordings, you're set. If the list is empty, the recorder is probably signed in to a different account, or its cloud sync is off.</p>
+            <p>Then ask the questions you actually have: <em>"Summarize yesterday's meeting and list who owes what."</em> or <em>"What did I promise in my last call with a client?"</em></p>
+            <p class="section-note"><strong>On a work plan?</strong> On Team and Enterprise plans, an admin may need to switch a connector on before members can connect it. Not every recorder has a connector. If yours isn't in the list, this tip won't work yet.</p>
+            <div class="card-foot"><p>Got an answer from a recording? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <div class="preview" aria-hidden="true">
+              <span class="preview-cap">What you'll see</span>
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> what did we decide about the launch date?</span>
+                <span class="preview-line"><span class="pulse">⠋</span> <span class="accent">Searching recordings…</span></span>
+                <span class="preview-line"><span class="accent">✓ Found it</span> <span class="dim">· Tuesday's team call: moved to the 14th,</span></span>
+                <span class="preview-line"><span class="dim">Sam confirms the vendor by Friday.</span></span>
+              </div>
+            </div>
+            <p><strong>What it can do:</strong> find recordings by name, keyword, or date; read the full transcript; read the app's own summary and action items. It reads. It can't delete or change anything.</p>
+            <p><strong>One honest caveat:</strong> transcripts are machine-written. Names and unusual words often come out wrong, and some apps clean up the wording. Use them to find things fast. When exact words matter, check the original recording.</p>
+            <p><strong>Think about what gets recorded.</strong> A recorder that's always on picks up everything, including calls you wouldn't want anywhere else. Connect only the account you're comfortable with Claude reading.</p>
+          </section>
+          <section class="panel" data-panel="further">
+            <h3>Talk to Claude while you record</h3>
+            <h4>A spoken prefix makes the important lines findable</h4>
+            <p>Pick a phrase and say it out loud during meetings, like <em>"for Claude: remind me to send the deck."</em> Later, ask Claude to find everything you said after that phrase. Those lines are short, explicit instructions, so they're easy to miss in a long transcript and easy to find by the phrase.</p>
+            <p>Connectors also work in Claude Code. Your connected tools come along with your Claude account, and <code>/mcp</code> shows them. Not sure which connectors are worth adding? The kit's <a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/choosing-plugins-and-connectors-primer.md" target="_blank" rel="noopener noreferrer">plugins and connectors primer</a> walks through it.</p>
+          </section>
+        </div>
+      </article>
+
+      <!-- P14 -->
+      <article class="card" id="morning-brief" data-step="P14" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P14 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P14 · Morning brief <span class="done-chip">Tried</span></div>
+            <h3 class="title">A morning brief waiting for you</h3>
+            <p class="hook">Your schedule in order, the three things that matter, and the emails that need a reply from a real person. One short read instead of five tabs. Set it up once, then ask for it, or have it run on its own.</p>
+            <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 10 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> piecing your day together from a calendar and an inbox is a chore, and Claude is good at chores.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="short">Shortcuts</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Connect your calendar and inbox, then paste</h3>
+            <ol>
+              <li>Connect Google Calendar and Gmail. In claude.ai, that's <strong>Customize &gt; Connectors</strong>. In Claude Code, type <code>/mcp</code>. You sign in once in a browser window and approve access.</li>
+              <li>Paste this:</li>
+            </ol>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p22">Copy</button>
+              <div id="p22">Check my calendar for today and give me a short morning brief: 1) My schedule for today, in order, with times. 2) My top 3 priorities, pulled from my calendar and from anything urgent in my unread email. 3) Emails that need a reply: only messages from real people I know or work with, not newsletters or automated notices. Keep it short enough to read in under a minute. Read only: don't send or change anything.</div>
+            </div>
+            <p>A good first brief names real meetings and real senders. If it's vague, say so. If it misses an email you'd expect, tell it what to always include, like <em>"anything from my accountant."</em> Claude will use that next time.</p>
+            <div class="card-foot"><p>Got your first brief? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <div class="preview" aria-hidden="true">
+              <span class="preview-cap">What you'll see</span>
+              <div class="preview-body">
+                <span class="preview-line"><span class="accent">9:00</span> Team check-in <span class="dim">· 10:30 Vendor call · 2:00 Review</span></span>
+                <span class="preview-line"><span class="accent">Top 3:</span> 1. Send the revised quote</span>
+                <span class="preview-line">2. Prep for the vendor call  3. Approve the draft</span>
+                <span class="preview-line"><span class="dim">Needs a reply: Dana (contract question)</span></span>
+              </div>
+            </div>
+            <p><strong>Why it works:</strong> the brief isn't clever. It saves the few minutes you'd spend hopping between your calendar and inbox before you start. Because it only reads, there's nothing to undo.</p>
+            <p><strong>If you travel,</strong> say which time zone to use. If you keep work and personal calendars apart, say which ones to check. Claude reads your main calendar unless you tell it otherwise.</p>
+          </section>
+          <section class="panel" data-panel="short">
+            <h3>Make it a habit</h3>
+            <h4>Three ways, from most hands-on to least</h4>
+            <ul>
+              <li><strong>Keep it manual.</strong> Each morning, say <em>"run my morning brief."</em></li>
+              <li><strong>Make it a command.</strong> Ask Claude to save the prompt as a slash command called <code>/morning-brief</code>, then type that each morning. See <a href="#slash">Fun 07</a>.</li>
+              <li><strong>Schedule it.</strong> Ask Claude to set it up to run every weekday morning with the <code>/schedule</code> command. It then runs without you opening anything.</li>
+            </ul>
+            <p>Want it somewhere you'll actually see it? Ask Claude to put each brief in a draft email to yourself instead of the chat.</p>
+            <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/automation-recipes/01-morning-brief.md" target="_blank" rel="noopener noreferrer">📖 The full recipe, with variations ↗</a></p>
+          </section>
+        </div>
+      </article>
+
+      <!-- P15 -->
+      <article class="card" id="calendar-handoff" data-step="P15" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P15 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P15 · Next actions <span class="done-chip">Tried</span></div>
+            <h3 class="title">Put what's left on your calendar, not in the chat</h3>
+            <p class="hook">Most work sessions end with something only you can do: send an email, approve a draft, make a call. Claude writes it in the chat, the chat scrolls away, and it's gone. Ask Claude to put it on your calendar instead, with everything you'll need to do it from your phone.</p>
+            <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 5 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> a chat only helps if you remember to go back and look. A calendar comes and finds you.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="short">Shortcuts</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Add one standing rule</h3>
+            <p>First, connect your calendar so Claude can create events (<strong>Customize &gt; Connectors</strong> in claude.ai, or <code>/mcp</code> in Claude Code). Then paste this into Claude Code:</p>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p23">Copy</button>
+              <div id="p23">Add this standing rule to my CLAUDE.md: "Schedule anything I need to do later. When we finish something and it ends with an action only I can take (an email to send, an approval, a decision, a login-gated edit), create a calendar event for it right then. Don't just tell me in chat. Every event description must include the exact steps, every link and file path I need, which account to sign in as, and why it matters. Never put a password in an event; say where it's stored. The test: I can act on that event alone, from my phone, weeks later. Check my calendar first for conflicts and duplicates, group related items into one slot, default to 15 minutes, and never send invitations to other people."</div>
+            </div>
+            <p>It has to live in your memory file (<a href="#claude-md">P4</a>). Pasted into a single chat, it applies once and then disappears.</p>
+            <p><strong>Then test it.</strong> End a real session with something that's waiting on you. Open the event on your phone. Can you do the thing from what's written there, without asking Claude where anything is? If not, tell Claude what was missing.</p>
+            <div class="card-foot"><p>Got a real event out of it? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <div class="preview" aria-hidden="true">
+              <span class="preview-cap">What you'll see</span>
+              <div class="preview-body">
+                <span class="preview-line"><span class="accent">✓ Event created</span> <span class="dim">· Thu 9:00 · 15 min</span></span>
+                <span class="preview-line">Review and send the revised quote</span>
+                <span class="preview-line"><span class="dim">Steps, file path, and the email draft are in the notes.</span></span>
+                <span class="preview-line"><span class="dim">Nothing sent. Nobody invited.</span></span>
+              </div>
+            </div>
+            <p><strong>Locations are the difference between a reminder and a working instruction.</strong> An event that says "send the deck" without saying where the deck is just sends you back to Claude to ask. That's the interruption the event was supposed to replace.</p>
+            <p><strong>Only things waiting on you belong there.</strong> If everything becomes an event, the calendar stops meaning anything. Work Claude can do itself should just get done.</p>
+          </section>
+          <section class="panel" data-panel="short">
+            <h3>Work you'll pick back up later</h3>
+            <h4>A paste-ready block, inside the event</h4>
+            <p>When the next step is "keep going on this project," ask Claude to end the event description with a block you can paste into a fresh conversation: what the work is, where everything lives, what's done, what's next, and what not to touch. Your phone is then enough to restart the work.</p>
+            <p>Keep work and personal calendars apart? Say which is which in the rule, or Claude will use your main one.</p>
+            <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/docs/calendar-handoff-primer.md" target="_blank" rel="noopener noreferrer">📖 The full primer: calendar handoff ↗</a></p>
+          </section>
+        </div>
+      </article>
+
+      <!-- P16 -->
+      <article class="card" id="bring-up-to-speed" data-step="P16" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P16 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P16 · Catch-up briefs <span class="done-chip">Tried</span></div>
+            <h3 class="title">Brief anyone on a messy project in one ask</h3>
+            <p class="hook">Someone joined late, or you've been out, and the history is scattered across email, meetings, and documents. Ask Claude to read it all and write the briefing: where things stand, who's waiting on whom, and what nobody knows yet.</p>
+            <div class="meta"><span class="date-pill">Added Oct 10, 2026</span><span class="path-badge path-kit">In the starter kit</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 5 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> the person catching up needs to decide something, not spend a day reconstructing history.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="short">Shortcuts</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Paste this with a name and a project</h3>
+            <p>Works best with your email and calendar connected (see <a href="#morning-brief">P14</a>). Without them, Claude will ask you to paste in the key threads.</p>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p24">Copy</button>
+              <div id="p24">Bring <span class="slot">[PERSON]</span> up to speed on <span class="slot">[PROJECT]</span>. Look through my email, calendar, and any connected tools, newest first. Start with a three-sentence bottom line: what's true, what's blocked, and who has the next move. Then give me a timeline of who was waiting on whom, a who's-who, open items with an owner and how long each has been sitting, and a list of what the record can't tell us. Leave out anything private that <span class="slot">[PERSON]</span> shouldn't see, and tell me what you left out.</div>
+            </div>
+            <p>Read the brief yourself before it goes to anyone. Claude shows you what it found and what it left out, so you decide what the reader sees.</p>
+            <div class="card-foot"><p>Briefed someone? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <div class="preview" aria-hidden="true">
+              <span class="preview-cap">What you'll see</span>
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> Bring Pat up to speed on the website move.</span>
+                <span class="preview-line"><span class="pulse">⠋</span> <span class="accent">Reading 3 weeks of email and 2 meetings…</span></span>
+                <span class="preview-line"><span class="accent">Bottom line:</span> blocked on the vendor's login.</span>
+                <span class="preview-line"><span class="dim">Next move is yours. Open since Sept 18.</span></span>
+              </div>
+            </div>
+            <p><strong>Not all sources are equal, and the brief says so.</strong> Original emails and documents count most. Meeting transcripts are useful but machine-cleaned, so they're never treated as exact quotes. Anyone's memory counts least. A claim that rests on a transcript or a recollection gets checked against something stronger or marked as unverified.</p>
+            <p><strong>It names the blind spot.</strong> The gap between when the record starts and when the reader first got access is where most confusion lives. The brief marks it instead of guessing.</p>
+          </section>
+          <section class="panel" data-panel="short">
+            <div class="kit-note">
+              <strong>Already installed the starter kit?</strong> This ships as the <code>bring-up-to-speed</code> skill. Ask for it in plain words, like <em>"bring Pat up to speed on the website move,"</em> and Claude uses it.
+            </div>
+            <p>The skill can also draft a call agenda and a ready-to-send email to whoever owes answers. Say so in your ask. Claude drafts the email for you to review. It doesn't send it.</p>
+            <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/skills/bring-up-to-speed/SKILL.md" target="_blank" rel="noopener noreferrer">📖 Read the skill ↗</a></p>
+          </section>
+        </div>
+      </article>
     </section>
 
     <!-- ================================================================ -->
-    <!-- BUCKET 2: STAY SAFE                                              -->
+    <!-- BUCKET 2: STAY SAFE                                             -->
     <!-- ================================================================ -->
     <section class="bucket" id="stay-safe" data-bucket="safe" aria-labelledby="h-safe">
       <div class="section-label" id="h-safe">Stay safe</div>

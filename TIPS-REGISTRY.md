@@ -16,8 +16,13 @@
 | P9 | Secrets | Password-manager runtime serving (1Password Environments); gitleaks | Kit 1password primer; gitleaks brew formula | 2026-08-07 | 2026-08-19 | current |
 | P10 | Reversibility | CLAUDE.md standing rules; kit backup-before-edit + safety-net hooks | Kit hooks ship + wired in hooks.json | 2026-08-07 | 2026-08-19 | current |
 | P11 | Scoped texts (Contacts group as allowlist) | macOS Contacts.app groups; chat.db readable w/ Full Disk Access; kit `docs/scoped-imessage-access-primer.md` | Kit primer exists; pattern re-verified against a live build (26/3,425 scope test, 2026-08-19) | 2026-08-19 | 2026-08-19 | current |
+| P12 | Long sessions (four habits) | `/clear`, `/rename`, `/resume`, `/context`, `/mcp`, `/model`, `/compact <focus>`, `/rewind`; "Compact instructions" section in CLAUDE.md | Docs /en/costs + /en/prompt-caching (all commands and the cache behavior read 2026-10-10); kit `docs/context-budget-primer.md` exists | 2026-10-10 | 2026-10-10 | current |
+| P13 | Meeting recordings (connector) | claude.ai Customize > Connectors; a recorder/notes app that offers a Claude connector; `/mcp` in Claude Code | Kit `docs/choosing-plugins-and-connectors-primer.md` exists; connector menu path matches kit Plaud primer (2026-10-10); recheck menu wording if claude.ai UI changes | 2026-10-10 | 2026-10-10 | current |
+| P14 | Morning brief | Calendar + Gmail connectors; `/schedule`; slash commands/skills | Kit `docs/automation-recipes/01-morning-brief.md` exists; `/schedule` listed as a skill in current CC (2026-10-10) | 2026-10-10 | 2026-10-10 | current |
+| P15 | Next actions on the calendar | Calendar connector; CLAUDE.md standing rule | Kit `docs/calendar-handoff-primer.md` exists | 2026-10-10 | 2026-10-10 | current |
+| P16 | Catch-up briefs | Kit skill `bring-up-to-speed` | Kit `skills/bring-up-to-speed/SKILL.md` exists on main | 2026-10-10 | 2026-10-10 | current |
 
-**Bench (candidates not yet published):** "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage).
+**Bench (candidates not yet published):** "Read several Google accounts from one Claude Code" (needs a public primer first; no verifiable beginner path) · "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage).
 | 01 | Spinner verbs | `spinnerVerbs` settings key | Live test on current CC (docs table omits it — verify by machine, not docs) | 2026-04 | 2026-08-19 (registry walk; see FRESHNESS-2026-08-19.md) | current |
 | 02 | Spinner tips | `spinnerTipsOverride` settings key | UNDOCUMENTED in current docs (only `spinnerTipsEnabled` appears). Needs live interactive test | 2026-04 | — | **unverified — test next session** |
 | 03 | Status line / mascot | `statusLine` block, script on stdin | Docs /en/statusline | 2026-04 | 2026-08-19 | current |
