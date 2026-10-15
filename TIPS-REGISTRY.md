@@ -21,8 +21,11 @@
 | P14 | Morning brief | Calendar + Gmail connectors; `/schedule`; slash commands/skills | Kit `docs/automation-recipes/01-morning-brief.md` exists; `/schedule` listed as a skill in current CC (2026-10-10) | 2026-10-10 | 2026-10-10 | current |
 | P15 | Next actions on the calendar | Calendar connector; CLAUDE.md standing rule | Kit `docs/calendar-handoff-primer.md` exists | 2026-10-10 | 2026-10-10 | current |
 | P16 | Catch-up briefs | Kit skill `bring-up-to-speed` | Kit `skills/bring-up-to-speed/SKILL.md` exists on main | 2026-10-10 | 2026-10-10 | current |
+| P17 | Fireflies + Wispr Flow connectors (emailed 2026-08-07) | claude.ai Customize > Connectors listing for Fireflies and Wispr Flow | Menu path matches P13 (2026-10-10); fireflies.ai + wisprflow.ai 200 (2026-10-14); recheck that both still appear in the connector directory | 2026-10-14 | 2026-10-14 | current |
+| P18 | All Google accounts in one Claude Code (emailed 2026-09-08) | Public repo `marianasmall/mariana-google-mcp` + its `SETUP-PROMPT.md`; Google Drive for desktop | Raw SETUP-PROMPT.md 200 and repo public (2026-10-14); prompt still covers the publish-to-production step | 2026-10-14 | 2026-10-14 | current |
+| P19 | Free workshops and meetups (emailed 2026-10-11) | anthropic.com/events/build-with-claude; luma.com/claudecommunity | Both URLs 200 (2026-10-14); card names no dates on purpose, so only the pages and workshop names can go stale | 2026-10-14 | 2026-10-14 | current |
 
-**Bench (candidates not yet published):** "Read several Google accounts from one Claude Code" (needs a public primer first; no verifiable beginner path) · "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage).
+**Bench (candidates not yet published):** "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage).
 | 01 | Spinner verbs | `spinnerVerbs` settings key | Live test on current CC (docs table omits it — verify by machine, not docs) | 2026-04 | 2026-08-19 (registry walk; see FRESHNESS-2026-08-19.md) | current |
 | 02 | Spinner tips | `spinnerTipsOverride` settings key | UNDOCUMENTED in current docs (only `spinnerTipsEnabled` appears). Needs live interactive test | 2026-04 | — | **unverified — test next session** |
 | 03 | Status line / mascot | `statusLine` block, script on stdin | Docs /en/statusline | 2026-04 | 2026-08-19 | current |

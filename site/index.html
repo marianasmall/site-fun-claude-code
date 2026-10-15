@@ -32,7 +32,7 @@
 
   <!--
     Step-card version (2026-10-10), live. Built with the step-card-builder skill.
-    23 tips, paste-ready text, stable anchor ids, grouped into goal buckets.
+    26 tips, paste-ready text, stable anchor ids, grouped into goal buckets.
     Deploy from a clean export (git archive) so _backups/ never ships.
   -->
   <style>
@@ -416,15 +416,15 @@
         Each one takes between five seconds and half an hour. You don't need to write code: you copy a sentence,
         paste it into Claude, and Claude does the setup.
       </p>
-      <p class="hero-updated">Last updated <strong>October 10, 2026</strong></p>
+      <p class="hero-updated">Last updated <strong>October 14, 2026</strong></p>
     </div>
   </header>
 
   <div class="progress" aria-live="polite">
     <div class="wrap">
       <div class="progress-row">
-        <p class="count" id="countLabel">0 of 23 tried</p>
-        <span class="where" id="whereLabel">Showing all 23 tips</span>
+        <p class="count" id="countLabel">0 of 26 tried</p>
+        <span class="where" id="whereLabel">Showing all 26 tips</span>
       </div>
       <div class="bar" role="progressbar" aria-label="Tips tried" aria-valuemin="0" aria-valuemax="23" aria-valuenow="0" id="bar"><span></span></div>
     </div>
@@ -480,11 +480,11 @@
 
       <p class="pick-label" id="pick-label">Or pick what you want out of it</p>
       <div class="buckets" role="group" aria-labelledby="pick-label">
-        <button class="bucket-btn" data-pick="smarter" aria-pressed="false"><b>Work smarter</b><span>12 tips · stop re-explaining yourself</span></button>
+        <button class="bucket-btn" data-pick="smarter" aria-pressed="false"><b>Work smarter</b><span>15 tips · stop re-explaining yourself</span></button>
         <button class="bucket-btn" data-pick="safe" aria-pressed="false"><b>Stay safe</b><span>4 tips · hand Claude real work, calmly</span></button>
         <button class="bucket-btn" data-pick="yours" aria-pressed="false"><b>Make it yours</b><span>7 tips · five-minute customizations</span></button>
       </div>
-      <button class="show-all" id="showAll" hidden>Show all 23 tips</button>
+      <button class="show-all" id="showAll" hidden>Show all 26 tips</button>
 
       <div class="about">
         <div>
@@ -1257,6 +1257,175 @@ description: Build the monthly client report from the analytics exports
             <p>The skill can also draft a call agenda and a ready-to-send email to whoever owes answers. Say so in your ask. Claude drafts the email for you to review. It doesn't send it.</p>
             <p><strong>Make it yours:</strong> treat the skill as a starting point. Tell Claude what to change: which tools to check first, how long the brief should be, or what to leave out.</p>
             <p class="docs-link"><a href="https://github.com/marianasmall/claude-code-starter-kit/blob/main/skills/bring-up-to-speed/SKILL.md" target="_blank" rel="noopener noreferrer">📖 Read the skill ↗</a></p>
+          </section>
+        </div>
+      </article>
+
+      <!-- P17 (first emailed 2026-08-07) -->
+      <article class="card" id="fireflies-wispr" data-step="P17" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P17 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P17 · Fireflies and Wispr Flow <span class="done-chip">Tried</span></div>
+            <h3 class="title">Search your meeting transcripts and dictation notes</h3>
+            <p class="hook">Two connectors worth adding if you use either app. With Fireflies connected, Claude can search and read your meeting transcripts and summaries. With Wispr Flow connected, it can read your meeting notes and scratchpad. Ask "summarize my last call with the vendor" and it pulls from the actual transcript instead of your memory.</p>
+            <div class="meta"><span class="date-pill">Emailed Aug 7, 2026 · added Oct 14, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 5 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> what was decided lives in the transcript, not in anyone's memory of the call.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="short">Shortcuts</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Connect, sign in once, then ask</h3>
+            <ol>
+              <li>In claude.ai, open the left sidebar and go to <strong>Customize &gt; Connectors</strong>.</li>
+              <li>Find <strong>Fireflies</strong>, <strong>Wispr Flow</strong>, or both, and click <strong>Connect</strong>. You sign in once and you're done.</li>
+              <li>Check it worked. Paste this:</li>
+            </ol>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p27">Copy</button>
+              <div id="p27">Summarize my last meeting and list what we decided.</div>
+            </div>
+            <p>If you use Wispr Flow, also try <em>"find my note about the benefits call."</em> If the answer comes from a real meeting or note of yours, you're set.</p>
+            <p class="section-note"><strong>On a Team plan:</strong> an admin can add a connector for the whole organization, but each person still authorizes their own account. Your transcripts stay yours until you connect them.</p>
+            <div class="card-foot"><p>Found something in a transcript? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <div class="preview" aria-hidden="true">
+              <span class="preview-cap">What you'll see</span>
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> what did we decide about the label on Tuesday?</span>
+                <span class="preview-line"><span class="pulse">⠋</span> <span class="accent">Searching Fireflies…</span></span>
+                <span class="preview-line"><span class="accent">✓ Tuesday's call</span> <span class="dim">· keep the current label,</span></span>
+                <span class="preview-line"><span class="dim">revisit after the next print run.</span></span>
+              </div>
+            </div>
+            <p><strong>Your memory of a call drifts. The transcript doesn't.</strong> Asking Claude means the answer comes from what was actually said, with the date of the meeting it came from.</p>
+            <p><strong>One honest caveat:</strong> transcripts are machine-made. Names and unusual words often come out wrong, so check a name before you put it in an email. Same advice as <a href="#meeting-notes">P13</a>, which covers recorders in general.</p>
+          </section>
+          <section class="panel" data-panel="short">
+            <h3>Running Claude for a team?</h3>
+            <h4>Give every setup change the same subject line</h4>
+            <p>Any time you change your team's Claude setup (connectors, plugins, skills, policies), announce it in an email whose subject starts with <strong>[Claude Update]</strong>. Anyone can search that phrase in their inbox and get the full history in one place.</p>
+            <p><strong>Make it yours:</strong> pick whichever tag your team will remember. What matters is that it never changes.</p>
+          </section>
+        </div>
+      </article>
+
+      <!-- P18 (first emailed 2026-09-08) -->
+      <article class="card" id="google-accounts" data-step="P18" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P18 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P18 · Several Google accounts <span class="done-chip">Tried</span></div>
+            <h3 class="title">All your Google accounts in one Claude Code</h3>
+            <p class="hook">One Claude Code, all your Google accounts, no logging in and out. Mine reads three accounts as one inbox and one calendar. Every account connects once, under a short name, and from then on you say "sweep my inboxes" and get one brief across all of them, with replies drafted in whichever account they belong to. Setup is self-serve, about 30 minutes for two or three accounts.</p>
+            <div class="meta"><span class="date-pill">Emailed Sep 8, 2026 · added Oct 14, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 30 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> mail lands in one account, the calendar in another, and Claude can only see whichever one you're logged into.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="further">Go further</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Paste one line, then follow along</h3>
+            <p>This needs <strong>Claude Code</strong> (Claude's terminal app) on a Mac or Linux. It doesn't work on the claude.ai website, which can't run it.</p>
+            <ol>
+              <li>Open Claude Code and paste this:</li>
+            </ol>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p28">Copy</button>
+              <div id="p28">Fetch https://raw.githubusercontent.com/marianasmall/mariana-google-mcp/main/SETUP-PROMPT.md and follow the instructions in it.</div>
+            </div>
+            <ol start="2">
+              <li><strong>Follow its checkpoints.</strong> The guide walks you through the Google console clicks one checkpoint at a time and waits for you at each one. Your part is about 10 minutes of clicking to create your own credentials, plus one approval per account.</li>
+              <li><strong>When it asks which accounts and what to call them,</strong> give each a short name, like <em>work</em>, <em>personal</em>, or a brand name. Short names are what you'll type later.</li>
+              <li><strong>Next morning, say <em>"sweep my inboxes."</em></strong> Correct it once or twice (<em>"replies to this client go from work," "always flag anything from my accountant"</em>) and it sticks.</li>
+            </ol>
+            <p class="section-note"><strong>The one step people skip:</strong> the guide has you publish your Google app to "production." Skip it and Google logs you out every seven days. The guide flags it. Take it seriously.</p>
+            <div class="card-foot"><p>Swept more than one inbox? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <div class="preview" aria-hidden="true">
+              <span class="preview-cap">What you'll see</span>
+              <div class="preview-body">
+                <span class="preview-line"><span class="prompt">&gt;</span> anything from the printer this week, any account?</span>
+                <span class="preview-line"><span class="pulse">⠋</span> <span class="accent">Searching work, personal, shop…</span></span>
+                <span class="preview-line"><span class="accent">✓ 2 emails</span> <span class="dim">· both in work, one needs a reply</span></span>
+              </div>
+            </div>
+            <p><strong>What you get:</strong> Gmail, Calendar and Contacts for every account you connect. One question covers all of them.</p>
+            <p><strong>It cannot send and it cannot delete.</strong> Drafts only; you press send. Anything it wants gone gets a "To Be Deleted" label for you to confirm. Every action it takes is written to a local log.</p>
+            <p><strong>One honest caveat:</strong> the no-send, no-delete guardrails are on by default because I wanted them. If you'd rather yours send, tell your Claude to change it. It's your build.</p>
+          </section>
+          <section class="panel" data-panel="further">
+            <h3>Google Drive works a different way</h3>
+            <h4>No connector needed</h4>
+            <p>This setup covers Gmail, Calendar and Contacts. For Drive, install <a href="https://www.google.com/drive/download/" target="_blank" rel="noopener noreferrer">Google Drive for desktop</a> and sign in to every account. Each one appears on your Mac as its own folder, and Claude Code reads them like any other folder, side by side.</p>
+            <p><strong>Make it yours:</strong> this is how one person runs it, tuned to how they work. Treat it as a starting point and tell your Claude what to change (accounts, the sweep format, level of detail). It will rebuild any of it to fit how you think.</p>
+            <p class="docs-link"><a href="https://github.com/marianasmall/mariana-google-mcp" target="_blank" rel="noopener noreferrer">📖 The open-source connector and its setup guide ↗</a></p>
+          </section>
+        </div>
+      </article>
+
+      <!-- P19 (first emailed 2026-10-11) -->
+      <article class="card" id="workshops" data-step="P19" data-first-tab="do">
+        <div class="card-head" tabindex="0" aria-expanded="false">
+          <button class="check" aria-pressed="false" aria-label="Mark P19 as tried"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 8.5l3 3 7-7"/></svg></button>
+          <div>
+            <div class="eyebrow">P19 · Free workshops <span class="done-chip">Tried</span></div>
+            <h3 class="title">Free live Claude workshops and meetups</h3>
+            <p class="hook">Anthropic and Tenex run free, live, 90-minute Claude workshops online, and the Claude Community runs free in-person meetups. It's the best hands-on training I've found. Signing up takes about two minutes.</p>
+            <div class="meta"><span class="date-pill">Emailed Oct 11, 2026 · added Oct 14, 2026</span><span class="path-badge path-paste">Paste-and-go</span></div>
+          </div>
+          <div class="head-right"><span class="badge">⏱ 2 min</span></div>
+        </div>
+        <div class="card-body">
+          <p class="because"><b>Because:</b> ninety minutes of building alongside a teacher beats a month of figuring it out alone.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="do">Do it</button>
+            <button class="tab" role="tab" data-tab="why">Why it matters</button>
+            <button class="tab" role="tab" data-tab="short">Shortcuts</button>
+          </div>
+          <section class="panel" data-panel="do">
+            <h3>Pick one and sign up</h3>
+            <h4>Online workshops (Anthropic and Tenex)</h4>
+            <ul>
+              <li><strong>Claude Workshop (Cowork):</strong> research, drafts, decks and follow-ups from your real work. No coding.</li>
+              <li><strong>Claude Code Workshop:</strong> for people building with Claude Code. Dates come and go, so check the events page for the next one.</li>
+            </ul>
+            <ol>
+              <li>Open the <a href="https://www.anthropic.com/events/build-with-claude" target="_blank" rel="noopener noreferrer">Anthropic events page</a> and filter to <strong>Virtual</strong>.</li>
+              <li>Click <strong>Apply</strong> on a date and fill in the short form. The join link arrives by email.</li>
+            </ol>
+            <h4>In-person meetups (Claude Community)</h4>
+            <p>Free, community-run, all over the world: <a href="https://luma.com/claudecommunity" target="_blank" rel="noopener noreferrer">luma.com/claudecommunity</a>. Popular ones fill up and go to a waitlist, so register early.</p>
+            <div class="card-foot"><p>Signed up for one? Tick it off.</p><button class="btn mark">I tried it</button></div>
+          </section>
+          <section class="panel" data-panel="why">
+            <p><strong>Why bother:</strong> I took the Claude Code session on October 2. In 90 minutes it changed how I set up my projects, how I keep Claude focused, and how I plan before I ask it to build. It's hands-on: you build along with the instructor, and you keep the materials for 30 days.</p>
+          </section>
+          <section class="panel" data-panel="short">
+            <h3>Three habits you can use right away</h3>
+            <ol>
+              <li><strong>Give Claude a briefing it reads every time</strong> (Project instructions in Claude, a CLAUDE.md file in Claude Code, see <a href="#claude-md">P4</a>), including a map of where your things live.</li>
+              <li><strong>One chat per task.</strong> Long chats cost more and drift. <a href="#long-days">P12</a> has the details.</li>
+              <li><strong>For anything important, get a second opinion.</strong> Paste the result into a fresh chat and ask it to find the problems:</li>
+            </ol>
+            <div class="prompt-box">
+              <button class="copy-btn" data-copy="p29">Copy</button>
+              <div id="p29">Find the problems in this. Be specific about what's wrong and why: </div>
+            </div>
+            <p><strong>Make it yours:</strong> this is how one person runs it. Tell your Claude what to change and it will adapt any of this to fit how you think.</p>
           </section>
         </div>
       </article>
