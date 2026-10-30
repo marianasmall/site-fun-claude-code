@@ -25,7 +25,7 @@
 | P18 | All Google accounts in one Claude Code (emailed 2026-09-08) | Public repo `marianasmall/mariana-google-mcp` + its `SETUP-PROMPT.md`; Google Drive for desktop | Raw SETUP-PROMPT.md 200 and repo public (2026-10-14); prompt still covers the publish-to-production step | 2026-10-14 | 2026-10-14 | current |
 | P19 | Free workshops and meetups (emailed 2026-10-11) | anthropic.com/events/build-with-claude; luma.com/claudecommunity | Both URLs 200 (2026-10-14); card names no dates on purpose, so only the pages and workshop names can go stale | 2026-10-14 | 2026-10-14 | current |
 
-**Bench (candidates not yet published):** "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage).
+**Bench (candidates not yet published):** "AI reports are claims to verify" (needs a paste-able form) · a "five native features you're missing" roundup (/recap, Esc, @file, Ctrl+R, /usage) · to publish: join the Claude Duet waitlist, sent 2026-10-28.
 | 01 | Spinner verbs | `spinnerVerbs` settings key | Live test on current CC (docs table omits it — verify by machine, not docs) | 2026-04 | 2026-08-19 (registry walk; see FRESHNESS-2026-08-19.md) | current |
 | 02 | Spinner tips | `spinnerTipsOverride` settings key | UNDOCUMENTED in current docs (only `spinnerTipsEnabled` appears). Needs live interactive test | 2026-04 | — | **unverified — test next session** |
 | 03 | Status line / mascot | `statusLine` block, script on stdin | Docs /en/statusline | 2026-04 | 2026-08-19 | current |
